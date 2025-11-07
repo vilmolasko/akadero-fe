@@ -1,0 +1,205 @@
+'use client';
+import React from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { cn } from '@/lib/utils';
+import * as api from '@/services';
+import toast from 'react-hot-toast';
+import { useQuery, useMutation } from '@tanstack/react-query';
+import { Card } from '@/components/ui/card';
+import AvatarDropzone from '../upload/avatar';
+import { useDispatch } from 'react-redux';
+import { setLogin } from '@/redux/slices/user';
+
+// ✅ Validacijos schema (Lithuanian)
+const categorySchema = Yup.object({
+  firstName: Yup.string().required('Vardas yra privalomas'),
+  lastName: Yup.string().required('Pavardė yra privaloma'),
+  about: Yup.string().required('Aprašymas yra privalomas'),
+  email: Yup.string()
+    .email('Neteisingas el. pašto formatas')
+    .required('El. paštas yra privalomas'),
+  phone: Yup.string()
+    .matches(/^[0-9]{10}$/, 'Telefono numeris turi būti 10 skaitmenų')
+    .required('Telefonas yra privalomas'),
+  cover: Yup.mixed().required('Nuotrauka yra privaloma'),
+});
+
+export default function SettingsForm() {
+  const dispatch = useDispatch();
+  const { data } = useQuery({
+    queryKey: ['user-profile'],
+    queryFn: api.getProfile,
+    select: (res) => res.data,
+    onError: (err) => {
+      toast.error(err?.response?.data?.message || 'Įvyko klaida!');
+    },
+  });
+
+  const user = data;
+
+  const { mutate, isPending: updateLoading } = useMutation({
+    mutationFn: api.updateProfile,
+    onSuccess: (res) => {
+      dispatch(setLogin(res.data));
+      toast.success('Profilis atnaujintas');
+    },
+  });
+
+  const formik = useFormik({
+    initialValues: {
+      firstName: user?.firstName || '',
+      lastName: user?.lastName || '',
+      email: user?.email || '',
+      phone: user?.phone || '',
+      about: user?.about || '',
+      cover: user?.cover || null,
+    },
+    enableReinitialize: true,
+    validationSchema: categorySchema,
+    onSubmit: async (values) => {
+      await mutate(values);
+    },
+  });
+
+  return (
+    <form onSubmit={formik.handleSubmit}>
+      <div className='grid grid-cols-1 md:grid-cols-12 gap-6'>
+        <Card className='col-span-12 md:col-span-5 space-y-5 p-5'>
+          <div className='text-center'>
+            <Label>Avataras</Label>
+            <AvatarDropzone
+              value={formik.values.cover}
+              onChange={(file) => formik.setFieldValue('cover', file)}
+            />
+            {formik.touched.cover && formik.errors.cover && (
+              <p className='text-red-500 text-sm mt-1'>{formik.errors.cover}</p>
+            )}
+          </div>
+        </Card>
+
+        <Card className='col-span-12 md:col-span-7 space-y-5 p-5'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+            <div>
+              <Label htmlFor='firstName'>Vardas</Label>
+              <Input
+                id='firstName'
+                name='firstName'
+                placeholder='Įveskite vardą'
+                value={formik.values.firstName}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className={cn(
+                  formik.touched.firstName &&
+                    formik.errors.firstName &&
+                    'border-red-500'
+                )}
+              />
+              {formik.touched.firstName && formik.errors.firstName && (
+                <p className='text-sm text-red-500 mt-1'>
+                  {formik.errors.firstName}
+                </p>
+              )}
+            </div>
+
+            <div>
+              <Label htmlFor='lastName'>Pavardė</Label>
+              <Input
+                id='lastName'
+                name='lastName'
+                placeholder='Įveskite pavardę'
+                value={formik.values.lastName}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className={cn(
+                  formik.touched.lastName &&
+                    formik.errors.lastName &&
+                    'border-red-500'
+                )}
+              />
+              {formik.touched.lastName && formik.errors.lastName && (
+                <p className='text-sm text-red-500 mt-1'>
+                  {formik.errors.lastName}
+                </p>
+              )}
+            </div>
+
+            <div>
+              <Label htmlFor='email'>El. paštas</Label>
+              <Input
+                id='email'
+                name='email'
+                type='email'
+                disabled
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className={
+                  formik.touched.email && formik.errors.email
+                    ? 'border-red-500'
+                    : ''
+                }
+              />
+              {formik.touched.email && formik.errors.email && (
+                <div className='text-red-500 text-sm mt-1'>
+                  {formik.errors.email}
+                </div>
+              )}
+            </div>
+
+            <div>
+              <Label htmlFor='phone'>Telefonas</Label>
+              <Input
+                id='phone'
+                name='phone'
+                type='tel'
+                placeholder='Įveskite telefono numerį'
+                value={formik.values.phone}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                className={
+                  formik.touched.phone && formik.errors.phone
+                    ? 'border-red-500'
+                    : ''
+                }
+              />
+              {formik.touched.phone && formik.errors.phone && (
+                <div className='text-red-500 text-sm mt-1'>
+                  {formik.errors.phone}
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div>
+            <Label htmlFor='about'>Apie</Label>
+            <Textarea
+              id='about'
+              name='about'
+              rows={3}
+              placeholder='Aprašykite apie save...'
+              value={formik.values.about}
+              onChange={formik.handleChange}
+              className={cn(
+                formik.touched.about && formik.errors.about && 'border-red-500'
+              )}
+            />
+            {formik.touched.about && formik.errors.about && (
+              <p className='text-sm text-red-500 mt-1'>{formik.errors.about}</p>
+            )}
+          </div>
+
+          <Button
+            type='submit'
+            disabled={updateLoading}>
+            {updateLoading ? 'Išsaugoma...' : 'Išsaugoti'}
+          </Button>
+        </Card>
+      </div>
+    </form>
+  );
+}

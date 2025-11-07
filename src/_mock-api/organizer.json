@@ -1,0 +1,35 @@
+{
+    "name": "KVK Training and Service Centre",
+    "description": "Mokymo ir paslaugų centras, Klaipėdos valstybinė kolegija",
+    "image": "/og-image.png",
+    "category": "Accounting",
+    "duration": "10 weeks",
+    "totalReviews": 150,
+    "rating": 4,
+    "price": 99.99,
+    "contentSection":[
+  {
+    "title": "Address",
+    "value": "Klaipėda, Lithuania"
+  },
+  {
+    "title": "Web Address",
+    "value": "https://www.kvkmokymai.lt"
+  },
+  {
+    "title": "Certificate",
+    "value": "Yes"
+  },
+  {
+    "title": "Compensated",
+    "value": "Employment services"
+  },
+  {
+    "title": "Graduation document",
+    "value": "Yes"
+  }
+],
+"descriptionSection":"Kursų programą sudaro apskaitos pagrindai, mokesčių pagrindai, darbas B1 arba Apskaita5 apskaitos programoje. Apskaitos dalyje nagrinėjamas įmonės veiklos operacijų registravimas, sudaromas sąskaitų likučių balansas, pelno ir nuostolių (jei tokie yra) ataskaitos, nuosavo kapitalo pokyčių ataskaita, pinigų srautų ataskaita. Mokesčių pagrindų dalyje nagrinėjamos mokamų mokesčių pagrindinės nuostatos, mokesčių apskaičiavimo, sumokėjimo, deklaravimo tvarka. Mokymų metu atkreipiamas ypatingas dėmesys į tai, kad visi dalyviai pilnai įsisavintu dalyko esmę. Būtent todėl renkamos nedidelės grupes."
+
+
+}

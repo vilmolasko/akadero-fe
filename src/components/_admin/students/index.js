@@ -1,0 +1,18 @@
+import Breadcrumbs from '@/layouts/_admin/breadcrumb';
+import StudentsList from './student-list';
+
+export default function AdminStudentsList() {
+  return (
+    <div className='space-y-6'>
+      {/* Page Title */}
+      <div className='flex items-center justify-between gap-3'>
+        <div>
+          <h1 className='text-2xl font-merriweather'>Studentai</h1>
+          {/* Breadcrumbs */}
+          <Breadcrumbs />
+        </div>
+      </div>
+      <StudentsList />
+    </div>
+  );
+}

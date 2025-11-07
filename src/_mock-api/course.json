@@ -1,0 +1,62 @@
+{
+    "name": "Introduction to Programming",
+    "description": "A beginner's course on programming concepts and languages.",
+    "image": "/detail-img.png",
+    "duration": "10 weeks",
+    "totalReviews": 150,
+    "rating": 4,
+    "price": 99.99,
+    "contentSection":[
+  {
+    "title": "Type of training",
+    "value": "Courses, training"
+  },
+  {
+    "title": "Level",
+    "value": "Beginner"
+  },
+  {
+    "title": "Duration",
+    "value": "60 (240 academic hours)"
+  },
+  {
+    "title": "Language",
+    "value": "English"
+  },
+  {
+    "title": "Access",
+    "value": "Lifetime"
+  },
+  {
+    "title": "Certificate",
+    "value": "Yes"
+  },
+  {
+    "title": "Compensated",
+    "value": "Employment services"
+  },
+  {
+    "title": "Graduation document",
+    "value": "Yes"
+  }
+],
+"descriptionSection":"Kursų programą sudaro apskaitos pagrindai, mokesčių pagrindai, darbas B1 arba Apskaita5 apskaitos programoje. Apskaitos dalyje nagrinėjamas įmonės veiklos operacijų registravimas, sudaromas sąskaitų likučių balansas, pelno ir nuostolių (jei tokie yra) ataskaitos, nuosavo kapitalo pokyčių ataskaita, pinigų srautų ataskaita. Mokesčių pagrindų dalyje nagrinėjamos mokamų mokesčių pagrindinės nuostatos, mokesčių apskaičiavimo, sumokėjimo, deklaravimo tvarka. Mokymų metu atkreipiamas ypatingas dėmesys į tai, kad visi dalyviai pilnai įsisavintu dalyko esmę. Būtent todėl renkamos nedidelės grupes.",
+"lecturers":[
+  {
+    "name": "John Doe",
+    "title": "Senior Developer",
+    "image": "/lecturer.png",
+    "bio": "John has over 10 years of experience in software development and has worked with various programming languages."
+  },
+  {
+    "name": "Jane Smith",
+    "title": "Software Engineer",
+    "image": "/lecturer-img.png",
+    "bio": "Jane specializes in web development and has a passion for teaching coding to beginners."
+  }
+],
+"program":{
+    "descriptions":"Accounting process: Chart of accounts; Accounting (double) entry (debit - credit); Accounting documents; Accounting registers; Basics of Accounting: Income and Cost Accounting and Profit; Fixed asset accounting; Accounting of short-term assets; Equity Accounting; Accounting of debts; Accounting and settlement procedure with employees. Financial reporting: Accounting procedures, at the end of the reporting period; Preparation of accounting policy; Table for the preparation of financial statements; Composition of financial statements; Preparation of financial statements. Tax calculation and their accounting: Tax overview of the Republic of Lithuania; Calculation, declaration, payment of corporate income tax; Calculation, declaration, payment of value added tax; Calculation, declaration, payment of personal income tax; Calculation, declaration, payment of state social insurance contributions, compulsory health insurance contributions and contributions to the guarantee fund; Calculation, declaration, payment of real estate tax; Calculation, declaration, payment of other taxes; Tests. Accounting. Tax calculation and regulations. Practical test: accounting according to the submitted primary documents before the preparation of financial statements, calculation of taxes and preparation of declaration forms. Practical examination of documents. Problem solving. Filling out report forms. Filling in declarations. Import, export, and exchange data from various systems, such as Ivesk.lt, html format management in accounting programs. Upon request, we provide internships in a real company."
+}
+
+}
