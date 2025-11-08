@@ -11,7 +11,7 @@ export default function StartLearning({ startCourses }) {
       {/* Header */}
       <div className='start-learning-content max-w-[820px] mx-auto'>
         <h1 className='text-2xl sm:text-3xl md:text-5xl font-bold font-merriweather text-center leading-relaxed tracking-wider'>
-          Pasiruošę pradėti mokytis?
+          Populiariausi kursai
         </h1>
       </div>
 

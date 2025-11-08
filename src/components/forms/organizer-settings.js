@@ -17,6 +17,7 @@ import AvatarDropzone from '../upload/avatar';
 // redux
 import { useDispatch } from 'react-redux';
 import { setLogin } from '@/redux/slices/user';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 
 // ✅ Validation Schema (Lithuanian)
 const categorySchema = Yup.object({
@@ -27,8 +28,12 @@ const categorySchema = Yup.object({
     .email('Neteisingas el. pašto formatas')
     .required('El. paštas yra privalomas'),
   phone: Yup.string()
-    .matches(/^[0-9]{10}$/, 'Telefono numeris turi būti iš 10 skaitmenų')
-    .required('Telefonas yra privalomas'),
+    .required('Telefono numeris yra privalomas')
+    .test(
+      'is-valid-phone',
+      'Neteisingas telefono numeris',
+      (value) => value && isValidPhoneNumber(value)
+    ),
   cover: Yup.mixed().required('Nuotrauka yra privaloma'),
 });
 
@@ -168,19 +173,21 @@ export default function OrganizerSettingsForm() {
             {/* Phone */}
             <div>
               <Label htmlFor='phone'>Telefonas</Label>
-              <Input
+              <PhoneInput
                 id='phone'
                 name='phone'
-                type='tel'
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
+                placeholder='+370 600 00000'
                 value={formik.values.phone}
-                placeholder='Įveskite telefono numerį'
-                className={
+                onChange={(value) => formik.setFieldValue('phone', value)}
+                defaultCountry='LT'
+                countries={['LT']}
+                international
+                countryCallingCodeEditable={false}
+                className={`w-full border px-3 py-1.5 rounded-md ${
                   formik.touched.phone && formik.errors.phone
                     ? 'border-red-500'
                     : ''
-                }
+                }`}
               />
               {formik.touched.phone && formik.errors.phone && (
                 <div className='text-red-500 text-sm mt-1'>

@@ -67,9 +67,8 @@ const Footer = () => {
                 />
               </NextLink>
               <p className='text-md  text-muted-foreground leading-relaxed tracking-wide mt-1 '>
-                „Lorem Ipsum“ yra tiesiog spausdinimo ir maketavimo pramonės
-                fiktyvus tekstas. „Lorem Ipsum“ yra pramonės standartas kaip
-                fiktyvus tekstas nuo pat...
+                Atrask profesinius, asmeninio tobulėjimo ir online mokymus
+                vienoje vietoje.
               </p>
               <div className='space-y-2 text-md  tracking-wide text-muted-foreground '>
                 <div className='flex items-center gap-3 hover:text-primary transition-colors duration-200'>
@@ -77,14 +76,14 @@ const Footer = () => {
                     <Mail className='h-4 w-4' />
                   </div>
 
-                  <a href='mailto:Info@akadero.com'>Info@akadero.com</a>
+                  <a href='mailto:mokymai@akadero.lt'>mokymai@akadero.lt</a>
                 </div>
                 <div className='flex items-center gap-3 hover:text-primary transition-colors duration-200'>
                   <div className='h-8 w-8 rounded-md bg-primary-100 text-foreground flex items-center justify-center'>
                     <PhoneCall className='h-4 w-4' />
                   </div>
 
-                  <a href='tel:+11234567891'>+1 123 456 7891</a>
+                  <a href='tel:+37068779075'>+37068779075</a>
                 </div>
                 <div className='flex items-center gap-3 hover:text-primary transition-colors duration-200'>
                   <div className='h-8 w-8 rounded-md bg-primary-100 text-foreground flex items-center justify-center'>
@@ -104,7 +103,7 @@ const Footer = () => {
             {/* First Company Column */}
             <div className='space-y-4'>
               <h3 className=' tracking-wide text-lg font-semibold text-foreground'>
-                Ištekliai
+                Ieškantiems kursų
               </h3>
               <ul className='space-y-3'>
                 {resourceData.map((item, index) => (
@@ -122,7 +121,7 @@ const Footer = () => {
             {/* Second Company Column */}
             <div className='space-y-4'>
               <h3 className=' tracking-wide text-lg font-semibold text-foreground'>
-                Įmonė
+                Siūlantiems kursus
               </h3>
               <ul className='space-y-3'>
                 {companyData.map((item, index) => (
@@ -183,7 +182,12 @@ const Footer = () => {
               <NextLink
                 href='/refund-policy'
                 className='text-md  tracking-wide text-muted-foreground hover:text-primary transition-colors duration-200'>
-                Naudojimo sąlygos ir pinigų grąžinimo politika
+                Naudojimosi sąlygos
+              </NextLink>
+              <NextLink
+                href='/kontaktai'
+                className='text-md  tracking-wide text-muted-foreground hover:text-primary transition-colors duration-200'>
+                Kontaktai
               </NextLink>
             </div>
           </div>
@@ -201,26 +205,34 @@ const resourceData = [
     link: '/courses',
   },
   {
-    name: 'Dėstytojai',
-    link: '/teachers',
+    name: 'Mokytojai',
+    link: '/lecturers',
   },
   {
     name: 'Organizatoriai',
     link: '/organizers',
   },
+  {
+    name: 'Užimtumo tarnybos finansuojami kursai ',
+    link: '#',
+  },
 ];
 
 const companyData = [
   {
-    name: 'Susisiekite su mumis',
-    link: '/contact',
+    name: 'Registracija',
+    link: '/registracija',
   },
   {
-    name: 'Privatumo politika',
-    link: '/privacy-policy',
+    name: 'Apie mus',
+    link: '#',
   },
   {
-    name: 'Taisyklės ir pinigų grąžinimas',
-    link: '/refund-policy',
+    name: 'Paslaugos',
+    link: '#',
+  },
+  {
+    name: 'Reklama',
+    link: '#',
   },
 ];

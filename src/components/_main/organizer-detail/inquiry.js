@@ -19,6 +19,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import * as api from '@/services';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 
 const validationSchema = Yup.object({
   firstName: Yup.string().required('Vardas yra privalomas'),
@@ -27,8 +28,12 @@ const validationSchema = Yup.object({
     .email('Neteisingas el. paštas')
     .required('El. paštas yra privalomas'),
   phone: Yup.string()
-    .matches(/^[0-9+\-\s]*$/, 'Neteisingas telefono numeris')
-    .required('Telefono numeris yra privalomas'),
+    .required('Telefono numeris yra privalomas')
+    .test(
+      'is-valid-phone',
+      'Neteisingas telefono numeris',
+      (value) => value && isValidPhoneNumber(value)
+    ),
   question: Yup.string().required('Įveskite savo klausimą'),
 });
 
@@ -159,18 +164,21 @@ export default function Inquiry({ organizerSlug }) {
           {/* Telefonas */}
           <div className='space-y-1'>
             <Label htmlFor='phone'>Telefono numeris</Label>
-            <Input
+            <PhoneInput
               id='phone'
               name='phone'
-              type='text'
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
+              placeholder='+370 600 00000'
               value={formik.values.phone}
-              className={
+              onChange={(value) => formik.setFieldValue('phone', value)}
+              defaultCountry='LT'
+              countries={['LT']}
+              international
+              countryCallingCodeEditable={false}
+              className={`w-full border px-3 py-1.5 rounded-md ${
                 formik.touched.phone && formik.errors.phone
                   ? 'border-red-500'
                   : ''
-              }
+              }`}
             />
             {formik.touched.phone && formik.errors.phone && (
               <p className='text-sm text-red-500'>{formik.errors.phone}</p>

@@ -15,6 +15,7 @@ import { Card } from '@/components/ui/card';
 import AvatarDropzone from '../upload/avatar';
 import ShadcnDropzone from '../upload/single-upload';
 import { useRouter } from '@bprogress/next';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 
 // ✅ Patvirtinimo schema (Validacijos schema)
 const OrganizerSchema = Yup.object({
@@ -24,8 +25,12 @@ const OrganizerSchema = Yup.object({
     .email('Neteisingas el. pašto formatas')
     .required('El. paštas yra privalomas'),
   phone: Yup.string()
-    .matches(/^[0-9]{10}$/, 'Telefono numeris turi būti 10 skaitmenų')
-    .required('Telefono numeris yra privalomas'),
+    .required('Telefono numeris yra privalomas')
+    .test(
+      'is-valid-phone',
+      'Neteisingas telefono numeris',
+      (value) => value && isValidPhoneNumber(value)
+    ),
   cover: Yup.mixed().required('Reikalingas viršelio paveikslėlis'),
   logo: Yup.mixed().required('Reikalingas logotipas'),
 });
@@ -176,19 +181,21 @@ export default function OrganizerSettingsForm() {
 
             <div>
               <Label htmlFor='phone'>Telefono numeris</Label>
-              <Input
+              <PhoneInput
                 id='phone'
                 name='phone'
-                type='tel'
-                placeholder='Įveskite telefono numerį'
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
+                placeholder='+370 600 00000'
                 value={formik.values.phone}
-                className={
+                onChange={(value) => formik.setFieldValue('phone', value)}
+                defaultCountry='LT'
+                countries={['LT']}
+                international
+                countryCallingCodeEditable={false}
+                className={`w-full border px-3 py-1.5 rounded-md ${
                   formik.touched.phone && formik.errors.phone
                     ? 'border-red-500'
                     : ''
-                }
+                }`}
               />
               {formik.touched.phone && formik.errors.phone && (
                 <div className='text-red-500 text-sm mt-1'>

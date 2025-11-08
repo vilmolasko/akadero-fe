@@ -25,6 +25,7 @@ import { useMutation } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import * as api from '@/services';
 import { Multiselect } from 'multiselect-react-dropdown';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 
 const statusOptions = [
   { name: 'Paskelbta', slug: 'published' },
@@ -114,11 +115,12 @@ const CourseSchema = Yup.object().shape({
   description: Yup.string().required('Aprašymas yra privalomas'),
   list: Yup.string().nullable(),
   contact: Yup.string()
-    .matches(
-      /^(\+?\d{1,4})?\s?\d{6,14}$/,
-      'Įveskite galiojantį telefono numerį'
-    )
-    .required('Telefonas yra privalomas'),
+    .required('Telefono numeris yra privalomas')
+    .test(
+      'is-valid-phone',
+      'Neteisingas telefono numeris',
+      (value) => value && isValidPhoneNumber(value)
+    ),
   // schedules: Yup.array()
   //   .of(
   //     Yup.object().shape({
@@ -645,9 +647,21 @@ export default function CourseForm({
 
           <div>
             <Label>Kontaktas</Label>
-            <Input
+            <PhoneInput
+              id='contact'
+              name='contact'
+              placeholder='+370 600 00000'
               value={formik.values.contact}
-              onChange={(e) => formik.setFieldValue('contact', e.target.value)}
+              onChange={(value) => formik.setFieldValue('contact', value)}
+              defaultCountry='LT'
+              countries={['LT']}
+              international
+              countryCallingCodeEditable={false}
+              className={`w-full border px-3 py-1.5 rounded-md ${
+                formik.touched.contact && formik.errors.contact
+                  ? 'border-red-500'
+                  : ''
+              }`}
             />
             {formik.touched.contact && formik.errors.contact && (
               <p className='text-red-500 text-sm mt-1'>

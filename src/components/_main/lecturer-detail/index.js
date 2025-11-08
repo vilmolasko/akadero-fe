@@ -22,9 +22,9 @@ export default function LecturerDetail({ data }) {
           <h2 className='text-lg md:text-3xl font-merriweather tracking-wider font-bold mb-0 md:mb-2'>
             {data?.name}
           </h2>
-          <p className='text-muted-foreground text-md md:text-normal tracking-wide mb-3'>
+          {/* <p className='text-muted-foreground text-md md:text-normal tracking-wide mb-3'>
             {data?.email}
-          </p>
+          </p> */}
           <p className='text-muted-foreground text-md md:text-normal tracking-wide mb-3'>
             {data?.description}
           </p>

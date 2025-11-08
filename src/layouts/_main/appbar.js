@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-import { ThemeToggle } from '@/components/theme-toggle';
+// import { ThemeToggle } from '@/components/theme-toggle';
 import Image from 'next/image';
 import {
   Drawer,
@@ -93,7 +93,7 @@ export default function Appbar() {
             }>
             Organizatoriai
           </NextLink>
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
 
           {!user ? (
             <>
@@ -171,7 +171,7 @@ export default function Appbar() {
 
         {/* Mobile Menu Button */}
         <div className='flex items-center gap-2 md:hidden'>
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <Drawer direction='left'>
             <DrawerTrigger asChild>
               <button className='md:hidden border h-9 cursor-pointer border-input p-2 rounded-md hover:bg-muted'>

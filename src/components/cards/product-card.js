@@ -31,9 +31,7 @@ export default function ProductCard({ organizer }) {
             {organizer?.name}
           </NextLink>
         </CardTitle>
-        <CardDescription className='font-semibold text-sm text-primary mt-1 tracking-wider'>
-          {organizer?.email}
-        </CardDescription>
+
         <CardDescription className='text-md text-secondary mt-1 line-clamp-2  tracking-wider'>
           {organizer?.description}
         </CardDescription>

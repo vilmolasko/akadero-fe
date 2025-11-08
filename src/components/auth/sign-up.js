@@ -21,6 +21,7 @@ import { useMutation } from '@tanstack/react-query';
 import { createSession } from '@/lib/session';
 
 import { Loader2 } from 'lucide-react';
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input';
 
 const validationSchema = Yup.object({
   firstName: Yup.string().required('Vardas yra privalomas'),
@@ -29,11 +30,12 @@ const validationSchema = Yup.object({
     .email('Neteisingas el. pašto formatas')
     .required('El. paštas yra privalomas'),
   phone: Yup.string()
-    .matches(
-      /^(\+?\d{1,4})?\s?\d{6,14}$/,
-      'Įveskite galiojantį telefono numerį'
-    )
-    .required('Telefonas yra privalomas'),
+    .required('Telefono numeris yra privalomas')
+    .test(
+      'is-valid-phone',
+      'Neteisingas telefono numeris',
+      (value) => value && isValidPhoneNumber(value)
+    ),
   password: Yup.string()
     .min(8, 'Slaptažodis turi būti bent 8 simbolių')
     .required('Slaptažodis yra privalomas'),
@@ -163,18 +165,21 @@ export default function SignUp() {
 
             <div className='space-y-1'>
               <Label htmlFor='phone'>Telefonas</Label>
-              <Input
+              <PhoneInput
                 id='phone'
                 name='phone'
-                type='tel'
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
+                placeholder='+370 600 00000'
                 value={formik.values.phone}
-                className={
+                onChange={(value) => formik.setFieldValue('phone', value)}
+                defaultCountry='LT'
+                countries={['LT']}
+                international
+                countryCallingCodeEditable={false}
+                className={`w-full border px-3 py-1.5 rounded-md ${
                   formik.touched.phone && formik.errors.phone
                     ? 'border-red-500'
                     : ''
-                }
+                }`}
               />
               {formik.touched.phone && formik.errors.phone && (
                 <div className='text-red-500 text-sm mt-1'>

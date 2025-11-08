@@ -347,11 +347,11 @@ export const getFilterCourses = async (query) => {
   return data;
 };
 export const createInquiryByCourse = async ({ courseId, ...payload }) => {
-  const { data } = await http.post(`course/inquiry/${courseId}`, payload);
+  const { data } = await http.post(`/course/inquiry/${courseId}`, payload);
   return data;
 };
 export const createInquiryByOrganizer = async ({ slug, ...payload }) => {
-  const { data } = await http.post(`organizer/inquiry/${slug}`, payload);
+  const { data } = await http.post(`/organizer/inquiry/${slug}`, payload);
   return data;
 };
 
@@ -365,5 +365,13 @@ export const registerStudent = async ({ ...payload }) => {
 };
 export const sendNewsletter = async (payload) => {
   const { data } = await http.post(`/newsletter`, payload);
+  return data;
+};
+export const createPlanRegisteration = async ({ ...payload }) => {
+  const { data } = await http.post(`/registeration`, payload);
+  return data;
+};
+export const createConatctUs = async ({ ...payload }) => {
+  const { data } = await http.post(`/contact-us`, payload);
   return data;
 };

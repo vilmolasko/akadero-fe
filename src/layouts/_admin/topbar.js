@@ -7,7 +7,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { ThemeToggle } from '@/components/theme-toggle';
+// import { ThemeToggle } from '@/components/theme-toggle';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteSession } from '@/lib/session';
@@ -36,7 +36,7 @@ export default function Topbar() {
 
       {/* Right: Actions */}
       <div className='flex items-center gap-2'>
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
         {/* Profile Menu */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

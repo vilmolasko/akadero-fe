@@ -17,7 +17,7 @@ export default function CategoryCourses({ categories }) {
       {/* Header */}
       <div className='category-content max-w-[820px] mx-auto'>
         <h1 className='text-2xl sm:text-3xl md:text-5xl font-bold font-merriweather text-center leading-relaxed tracking-wider'>
-          Kategorija pagal kursą
+          Mokymų ir kursų temos
         </h1>
       </div>
       <div className='mt-5 md:mt-8'>

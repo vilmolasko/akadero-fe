@@ -7,6 +7,7 @@ import './globals.css';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'react-phone-number-input/style.css';
 
 const openSans = Open_Sans({
   subsets: ['latin'],
