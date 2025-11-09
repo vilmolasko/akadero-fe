@@ -1,12 +1,16 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, ShoppingBag, DollarSign, BarChart3 } from "lucide-react";
 import { useCurrencyFormat } from "@/hooks/formatCurrency";
-export default function DashboardStats({ summary }) {
+export default function DashboardStats({ summary, organizer }) {
   const fCurrency = useCurrencyFormat();
   const stats = [
     {
-      title: "Pajamos",
-      value: summary?.revenue ? fCurrency(summary?.revenue) : fCurrency(0),
+      title: organizer ? "Išskirtiniai kursai" : "Pajamos",
+      value: organizer
+        ? summary?.totalFeatured
+        : summary?.revenue
+        ? fCurrency(summary?.revenue)
+        : fCurrency(0),
       icon: DollarSign,
     },
     {
@@ -15,14 +19,14 @@ export default function DashboardStats({ summary }) {
       icon: Users,
     },
     {
-      title: "Iš viso kursų",
-      value: summary?.totalCourses,
+      title: organizer ? "Paskelbti kursai" : "Iš viso kursų",
+      value: organizer ? summary?.totalPublished : summary?.totalCourses,
       icon: ShoppingBag,
     },
 
     {
-      title: "Organizatoriai",
-      value: summary?.totalOrganizers,
+      title: organizer ? "Laukiantys kursai" : "Organizatoriai",
+      value: organizer ? summary?.totalPending : summary?.totalOrganizers,
       icon: BarChart3,
     },
   ];
