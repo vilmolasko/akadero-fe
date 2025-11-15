@@ -16,7 +16,7 @@ export default function ProductCard({ organizer }) {
       <NextLink href={`/organizers/${organizer?._id}`}>
         <div className='relative h-40 '>
           <Image
-            src={organizer?.logo?.url}
+            src={organizer?.logo?.url || '/placeholder-image.png'}
             alt='Product Image'
             fill
             className='object-cover cursor-pointer'

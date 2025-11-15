@@ -34,7 +34,7 @@ export const useCurrencyFormat = (mode = 'selected', customCurrency = '') => {
 
   const formatCurrency = (number) => {
     if (!formatter) return number;
-    return formatter.format(Number(number)).slice(0, -1);
+    return formatter.format(Number(number));
   };
 
   return formatCurrency;

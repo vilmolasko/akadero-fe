@@ -19,22 +19,22 @@ export default function CourseListCard({ course }) {
       <CardContent className={'px-3.5 '}>
         {course?.featured && (
           <Badge
-            variant='default'
-            className='bg-amber-300 absolute top-3 left-3 z-30 rounded-sm hover:bg-amber-400'>
+            variant='destructive'
+            className=' absolute top-2 left-2 z-30 rounded-sm text-md'>
             {course?.featuredLabel || 'TOP'}
           </Badge>
         )}
-        <Badge
+        {/* <Badge
           variant='destructive'
           className='absolute top-3 right-3 z-30'>
           3:30h
-        </Badge>
+        </Badge> */}
         <div className='grid grid-cols-12 items-center gap-5'>
           <div className='col-span-12 sm:col-span-2'>
             <div className='relative aspect-[16/9] md:aspect-square w-full rounded-lg overflow-hidden '>
               <NextLink href={`/course/${course?.slug}`}>
                 <Image
-                  src={course?.cover?.url}
+                  src={course?.cover?.url || '/placeholder-image.png'}
                   alt={course?.title}
                   fill
                   className='object-cover'

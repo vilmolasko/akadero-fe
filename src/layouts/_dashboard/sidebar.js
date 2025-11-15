@@ -38,7 +38,7 @@ const navItems = [
     icon: BookOpenCheck,
   },
   {
-    label: 'Dėstytojai',
+    label: 'Mokytojai',
     href: '/dashboard/lecturers',
     icon: GraduationCap,
   },
@@ -85,15 +85,15 @@ export default function OrganizerSidebar() {
               <Image
                 src='/logo.png'
                 alt='Logo'
-                width={45}
-                height={45}
+                width={40}
+                height={40}
                 className='object-contain'
               />
             </NextLink>
           ) : (
             <NextLink href='/'>
               <Image
-                src='/logo.svg'
+                src='/logo-dark.png'
                 alt='Logo'
                 width={160}
                 height={45}
@@ -204,7 +204,7 @@ export default function OrganizerSidebar() {
           <div className='p-4 border-b'>
             <NextLink href='/'>
               <Image
-                src='/logo.svg'
+                src='/logo-dark.png'
                 alt='Logo'
                 width={160}
                 height={45}

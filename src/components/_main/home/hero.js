@@ -58,11 +58,11 @@ export default function Hero({ categories }) {
           <Select
             value={category}
             onValueChange={setCategory}>
-            <SelectTrigger className='w-full max-w-25 md:max-w-[140px] h-10 md:h-14 px-2 md:px-6 text-md md:text-normal rounded-none border-0 bg-card shadow-none focus:ring-0 focus:outline-none'>
+            <SelectTrigger className='w-full max-w-25 md:max-w-[150px] h-10 md:h-14 px-2 md:pl-6 md:pr-2 text-md md:text-normal rounded-none border-0 bg-card shadow-none focus:ring-0 focus:outline-none'>
               <SelectValue placeholder='Pasirinkite kategorija' />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value='none'>All Categories</SelectItem>
+              <SelectItem value='none'>Visos kategorijos</SelectItem>
               {categories.map((cat) => (
                 <SelectItem
                   key={cat._id}

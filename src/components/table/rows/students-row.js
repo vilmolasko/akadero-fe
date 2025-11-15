@@ -57,7 +57,7 @@ export default function StudentsRow({
             <div className='relative h-12 w-12 rounded-md border overflow-hidden'>
               <Image
                 fill
-                src={row?.course?.cover?.url}
+                src={row?.course?.cover?.url || '/placeholder-image.png'}
                 alt={row?.course?.title}
                 className='object-cover'
               />

@@ -23,7 +23,7 @@ export default async function LecturersPage() {
       <div>
         {/* Page Title */}
         <h1 className='text-3xl sm:text-4xl lg:text-5xl font-bold font-merriweather tracking-wide text-foreground mb-2'>
-          Dėstytojai
+          Mokytojai
         </h1>
         {/* Breadcrumb */}
         <Breadcrumb>
@@ -33,7 +33,7 @@ export default async function LecturersPage() {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Dėstytojai</BreadcrumbPage>
+              <BreadcrumbPage>Mokytojai</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>

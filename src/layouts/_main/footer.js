@@ -57,10 +57,10 @@ const Footer = () => {
               {/* Logo */}
               <NextLink href='/'>
                 <Image
-                  src='/logo.svg'
+                  src='/logo-dark.png'
                   alt='Logo'
                   placeholder='blur'
-                  blurDataURL='/logo.svg'
+                  blurDataURL='/logo-dark.png'
                   className='object-contain'
                   width={190}
                   height={52}
@@ -84,15 +84,6 @@ const Footer = () => {
                   </div>
 
                   <a href='tel:+37068779075'>+37068779075</a>
-                </div>
-                <div className='flex items-center gap-3 hover:text-primary transition-colors duration-200'>
-                  <div className='h-8 w-8 rounded-md bg-primary-100 text-foreground flex items-center justify-center'>
-                    <LocateFixed className='h-4 w-4' />
-                  </div>
-
-                  <a href='https://www.google.com/maps/place/New+York,+NY,+USA'>
-                    Niujorkas, Jungtinės Valstijos
-                  </a>
                 </div>
               </div>
             </div>

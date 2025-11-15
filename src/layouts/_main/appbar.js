@@ -54,10 +54,10 @@ export default function Appbar() {
         {/* Logo */}
         <NextLink href='/'>
           <Image
-            src='/logo.svg'
+            src='/logo-dark.png'
             alt='Logo'
             placeholder='blur'
-            blurDataURL='/logo.svg'
+            blurDataURL='/logo-dark.png'
             className='object-contain'
             width={190}
             height={52}
@@ -103,7 +103,7 @@ export default function Appbar() {
                 onClick={() => {
                   router.push('/auth/sign-up');
                 }}>
-                Paskelbti
+                Skelbti
               </Button>
               <Button
                 onClick={() => {
@@ -152,7 +152,7 @@ export default function Appbar() {
                         ? '/admin/dashboard'
                         : '/dashboard/main'
                     }>
-                    Dašaordas
+                    Profilis
                   </NextLink>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
@@ -203,8 +203,11 @@ export default function Appbar() {
                         <DrawerClose asChild>
                           <Button
                             variant='default'
-                            size='sm'>
-                            Paskelbti
+                            size='sm'
+                            onClick={() => {
+                              router.push('/auth/sign-up');
+                            }}>
+                            Skelbti
                           </Button>
                         </DrawerClose>
                         <DrawerClose asChild>
@@ -262,7 +265,7 @@ export default function Appbar() {
                         ? '/admin/dashboard'
                         : '/dashboard/main'
                     }>
-                    Dašaordas
+                    Profilis
                   </NextLink>
                 </DropdownMenuItem>
                 <DropdownMenuItem>

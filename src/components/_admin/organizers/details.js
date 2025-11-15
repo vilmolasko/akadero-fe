@@ -14,7 +14,7 @@ const TABLE_HEAD = [
   { id: 'name', label: 'Pavadinimas' },
   { id: 'category', label: 'Kategorija' },
   { id: 'organizers', label: 'Organizatoriai' },
-  { id: 'lecturers', label: 'Dėstytojai' },
+  { id: 'lecturers', label: 'Mokytojai' },
   { id: 'price', label: 'Kaina' },
   { id: 'status', label: 'Būsena' },
   { id: 'createdAt', label: 'Data' },

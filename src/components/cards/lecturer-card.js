@@ -16,7 +16,7 @@ export default function LecturerCard({ lecturer }) {
       <NextLink href={`/lecturers/${lecturer?._id}`}>
         <div className='relative h-40 '>
           <Image
-            src={lecturer?.cover?.url}
+            src={lecturer?.cover?.url || '/placeholder-image.png'}
             alt={lecturer?.name}
             fill
             className='object-cover cursor-pointer'

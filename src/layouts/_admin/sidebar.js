@@ -55,7 +55,7 @@ const navItems = [
     icon: Building2,
   },
   {
-    label: 'Dėstytojai',
+    label: 'Mokytojai',
     href: '/admin/lecturers',
     icon: GraduationCap,
   },
@@ -96,19 +96,19 @@ export default function Sidebar() {
                 src='/logo.png'
                 alt='Logo'
                 placeholder='blur'
-                blurDataURL='/logo.svg'
+                blurDataURL='/logo-dark.png'
                 className='object-contain'
-                width={45}
-                height={45}
+                width={40}
+                height={40}
               />
             </NextLink>
           ) : (
             <NextLink href='/'>
               <Image
-                src='/logo.svg'
+                src='/logo-dark.png'
                 alt='Logo'
                 placeholder='blur'
-                blurDataURL='/logo.svg'
+                blurDataURL='/logo-dark.png'
                 className='object-contain'
                 width={160}
                 height={45}
@@ -162,10 +162,10 @@ export default function Sidebar() {
           {/* Logo */}
           <NextLink href='/'>
             <Image
-              src='/logo.svg'
+              src='/logo-dark.png'
               alt='Logo'
               placeholder='blur'
-              blurDataURL='/logo.svg'
+              blurDataURL='/logo-dark.png'
               className='object-contain'
               width={190}
               height={52}

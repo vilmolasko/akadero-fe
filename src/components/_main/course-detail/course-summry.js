@@ -51,7 +51,7 @@ export default function CourseSummary({ data }) {
           <div className='flex items-center justify-between gap-2 my-2'>
             <h4 className='flex items-center gap-2 text-md md:text-normal tracking-wide text-secondary'>
               <ArrowRight className='h-5 w-5' />
-              Mokymo tipas
+              Mokymai
             </h4>
             <h5 className='text-md md:text-normal font-bold tracking-wide'>
               {data?.type?.join(', ')}
@@ -117,7 +117,7 @@ export default function CourseSummary({ data }) {
           <div className='flex items-center justify-between gap-2 my-2'>
             <h4 className='flex items-center gap-2 text-md md:text-normal tracking-wide text-secondary'>
               <ArrowRight className='h-5 w-5' />
-              Kompensuota
+              Finansavimas
             </h4>
             <h5 className='text-md md:text-normal font-bold tracking-wide'>
               {data?.compensated}

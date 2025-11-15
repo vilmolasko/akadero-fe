@@ -21,6 +21,7 @@ import {
   Glasses,
   Calendar,
   ChevronDownIcon,
+  GraduationCap,
 } from 'lucide-react';
 
 export default function FilterPopover({ filters }) {
@@ -107,7 +108,7 @@ export default function FilterPopover({ filters }) {
             <AccordionTrigger className='h-10 lg:h-14 px-3 md:px-4 py-3 hover:bg-background flex items-center justify-between cursor-pointer'>
               <div className='flex items-center gap-2'>
                 <MapPin className='w-5 h-5 ' />
-                <span className='text-md lg:text-normal'>Vieta</span>
+                <span className='text-md lg:text-normal'>Miestas</span>
               </div>
             </AccordionTrigger>
             <AccordionContent className='px-4 md:px-6 pb-4 pt-1'>
@@ -138,7 +139,7 @@ export default function FilterPopover({ filters }) {
             <AccordionTrigger className='h-10 lg:h-14 px-3 md:px-4 py-3 hover:bg-background flex items-center justify-between cursor-pointer'>
               <div className='flex items-center gap-2'>
                 <Wallet className='w-5 h-5 ' />
-                <span className='text-md lg:text-normal'>Kompensuota</span>
+                <span className='text-md lg:text-normal'>Finansavimas</span>
               </div>
             </AccordionTrigger>
             <AccordionContent className='px-4 md:px-6 pb-4 pt-1'>
@@ -172,8 +173,8 @@ export default function FilterPopover({ filters }) {
             className='border-b'>
             <AccordionTrigger className='h-10 lg:h-14 px-3 md:px-4 py-3 hover:bg-background flex items-center justify-between cursor-pointer'>
               <div className='flex items-center gap-2'>
-                <Glasses className='w-5 h-5 ' />
-                <span className='text-md lg:text-normal'>Mokymo tipas</span>
+                <GraduationCap className='w-5 h-5 ' />
+                <span className='text-md lg:text-normal'>Mokymai</span>
               </div>
             </AccordionTrigger>
             <AccordionContent className='px-4 md:px-6 pb-4 pt-1'>

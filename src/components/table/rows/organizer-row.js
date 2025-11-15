@@ -44,7 +44,7 @@ export default function OrganizerRow({ isLoading, row, handleClickOpen }) {
           <div className='relative h-12 w-12 rounded-md border overflow-hidden'>
             <Image
               fill
-              src={row?.cover?.url}
+              src={row?.cover?.url || '/placeholder-image.png'}
               alt={row?.name}
               className='object-cover'
             />

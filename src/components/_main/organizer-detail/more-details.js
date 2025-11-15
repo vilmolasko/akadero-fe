@@ -47,7 +47,7 @@ export default function MoreDetails({ data, courses }) {
                 <TableRow>
                   <TableHead>Kurso pavadinimas</TableHead>
                   <TableHead>Data</TableHead>
-                  <TableHead>Vieta</TableHead>
+                  <TableHead>Miestas</TableHead>
                   <TableHead>Vietų skaičius</TableHead>
                   <TableHead>Komentaras</TableHead>
                   <TableHead></TableHead>
@@ -136,7 +136,7 @@ export default function MoreDetails({ data, courses }) {
                     className='space-y-1 flex items-center justify-between gap-2 border-b border-border last:border-b-0'>
                     <div className='relative flex items-center gap-4'>
                       <Image
-                        src={lecturer?.cover?.url}
+                        src={lecturer?.cover?.url || '/placeholder-image.png'}
                         alt={lecturer.name}
                         width={60}
                         height={60}

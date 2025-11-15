@@ -70,7 +70,7 @@ export default function CourseRow({
           <div className='relative h-12 w-12 min-w-12 rounded-md border overflow-hidden'>
             <Image
               fill
-              src={row?.cover?.url}
+              src={row?.cover?.url || '/placeholder-image.png'}
               alt={row?.title}
               className='object-cover'
             />
@@ -84,7 +84,7 @@ export default function CourseRow({
             <div className='relative h-12 w-12 min-w-12 rounded-md border overflow-hidden'>
               <Image
                 fill
-                src={row?.organizerCover}
+                src={row?.organizerCover || '/placeholder-image.png'}
                 alt={row?.organizer}
                 className='object-cover'
               />

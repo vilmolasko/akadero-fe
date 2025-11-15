@@ -71,7 +71,7 @@ export default function LecturersMain({ lecturers, filters }) {
       {!isLoading && totalItems > 0 && (
         <div className='flex flex-col md:flex-row justify-between items-center gap-2 mt-6'>
           <h6 className='text-md md:text-base font-medium text-foreground'>
-            Rodoma {startItem}–{endItem} iš {totalItems} Dėstytojai
+            Rodoma {startItem}–{endItem} iš {totalItems} Mokytojai
           </h6>
 
           <Pagination

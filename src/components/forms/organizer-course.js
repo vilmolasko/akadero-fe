@@ -321,7 +321,7 @@ export default function OrganizerCourseForm({
               )}
             </div>
             <div>
-              <Label>Šliužas</Label>
+              <Label>URL</Label>
               <Input
                 value={formik.values.slug}
                 onChange={formik.handleChange}
@@ -425,7 +425,7 @@ export default function OrganizerCourseForm({
 
           <div className='grid grid-cols-1'>
             <div>
-              <Label>Dėstytojai (daug pasirinkimų)</Label>
+              <Label>Mokytojai (daug pasirinkimų)</Label>
               <Multiselect
                 options={lecturers}
                 displayValue='name'
@@ -510,7 +510,7 @@ export default function OrganizerCourseForm({
                   </div>
 
                   <div>
-                    <Label>Vieta</Label>
+                    <Label>Miestas</Label>
                     <Input
                       value={s.location}
                       onChange={(e) => {
@@ -652,7 +652,7 @@ export default function OrganizerCourseForm({
             )}
           </div>
           <div>
-            <Label>Kompensuota</Label>
+            <Label>Finansavimas</Label>
             <Select
               value={formik.values.compensated}
               onValueChange={(v) => formik.setFieldValue('compensated', v)}>

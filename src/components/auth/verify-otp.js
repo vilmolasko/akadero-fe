@@ -49,7 +49,7 @@ export default function VerifyOTP() {
   const [loading, setLoading] = React.useState(false);
   const [resendLoading, setResendLoading] = React.useState(false);
   const [complete, setComplete] = React.useState(false);
-  const [countdownDate, setCountdownDate] = React.useState(Date.now() + 60000);
+  const [countdownDate, setCountdownDate] = React.useState(Date.now() + 120000);
 
   const mutation = useMutation({
     mutationFn: api.verifyOTP,

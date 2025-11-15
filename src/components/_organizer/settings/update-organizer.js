@@ -1,6 +1,13 @@
 'use client';
 import React from 'react';
-import Breadcrumbs from '@/layouts/_admin/breadcrumb';
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb'; // Breadcrumb components
 import OrganizerForm from '@/components/forms/organizer';
 
 export default function OrganizerSettings({ create }) {
@@ -10,8 +17,16 @@ export default function OrganizerSettings({ create }) {
         <h1 className='text-2xl font-merriweather'>
           {create ? 'Pradėkite pardavinėti' : 'Atnaujinimų organizatorius'}{' '}
         </h1>
-        {/* Breadcrumbs */}
-        <Breadcrumbs />
+        {/* Breadcrumb */}
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbPage>
+                Užpildykite mokymų organizatoriaus duomenis
+              </BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
       </div>
       <OrganizerForm />
     </div>

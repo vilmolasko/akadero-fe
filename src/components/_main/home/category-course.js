@@ -30,7 +30,7 @@ export default function CategoryCourses({ categories }) {
                 <div className='flex  items-center gap-3'>
                   <div className='rounded-lg relative h-16 w-16 overflow-hidden'>
                     <Image
-                      src={course?.cover?.url}
+                      src={course?.cover?.url || '/placeholder-image.png'}
                       alt={course.name}
                       fill
                       className='object-cover'
