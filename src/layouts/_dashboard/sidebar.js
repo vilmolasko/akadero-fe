@@ -79,7 +79,7 @@ export default function OrganizerSidebar() {
           collapsed ? 'w-20' : 'w-69'
         )}>
         {/* Header */}
-        <div className='h-16 flex items-center justify-between px-4 border-b relative'>
+        <div className='min-h-16 flex items-center justify-between px-4 border-b relative'>
           {collapsed ? (
             <NextLink href='/'>
               <Image
@@ -184,6 +184,18 @@ export default function OrganizerSidebar() {
               </NextLink>
             );
           })}
+          {!collapsed && (
+            <div className='relative h-90 mt-2 border border-gray-200 rounded-md   '>
+              <NextLink href='/'>
+                <Image
+                  src='/banner.png'
+                  alt='banners'
+                  fill
+                  className='object-cover rounded-md'
+                />
+              </NextLink>
+            </div>
+          )}
         </nav>
       </aside>
 
@@ -275,6 +287,16 @@ export default function OrganizerSidebar() {
                 </NextLink>
               );
             })}
+            <div className='relative h-60 mt-2  '>
+              <NextLink href='/'>
+                <Image
+                  src='/banner.png'
+                  alt='banners'
+                  fill
+                  className='object-contain'
+                />
+              </NextLink>
+            </div>
           </nav>
         </SheetContent>
       </Sheet>

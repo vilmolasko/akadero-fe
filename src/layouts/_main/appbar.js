@@ -156,7 +156,14 @@ export default function Appbar() {
                   </NextLink>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <NextLink href={`/admin/settings`}>Nustatymai</NextLink>
+                  <NextLink
+                    href={
+                      user?.role === 'admin'
+                        ? '/admin/settings'
+                        : 'dashboard/settings/general'
+                    }>
+                    Nustatymai
+                  </NextLink>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem

@@ -12,6 +12,8 @@ import {
 } from '@/components/ui/select';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Hero({ categories }) {
   const router = useRouter();
@@ -40,7 +42,7 @@ export default function Hero({ categories }) {
   };
 
   return (
-    <div className='hero-section max-w-[940px] mx-auto my-10 md:my-20'>
+    <div className='hero-section max-w-[940px] mx-auto mt-10  md:mt-20 mb-5'>
       <div className='hero-content'>
         <h1 className='text-3xl md:text-5xl font-bold font-merriweather text-center leading-tight tracking-wider'>
           Mokymų ir kursų <span className='text-primary'>paieška</span>

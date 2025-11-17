@@ -5,20 +5,21 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 import Image from 'next/image';
 import NextLink from 'next/link';
+import Link from 'next/link';
 
 export default function CategoryCourses({ categories }) {
-  const courses = Array(6).fill({
-    title: 'Computer Course',
-    totalCourses: 314,
-    items: Array(9).fill({ name: 'Programming', count: 15 }),
-  });
   return (
     <div className='category-courses py-5 md:py-8'>
       {/* Header */}
-      <div className='category-content max-w-[820px] mx-auto'>
-        <h1 className='text-2xl sm:text-3xl md:text-5xl font-bold font-merriweather text-center leading-relaxed tracking-wider'>
-          Mokymų ir kursų temos
-        </h1>
+      <div className='relative h-20 md:h-50 mt-5 md:mt-10 border border-gray-200 rounded-md  '>
+        <Link href='/'>
+          <Image
+            src='/banner-2.png'
+            alt='banners'
+            fill
+            className='object-cover rounded-md'
+          />
+        </Link>
       </div>
       <div className='mt-5 md:mt-8'>
         <div className='grid overflow-hidden rounded-md border md:grid-cols-2 lg:grid-cols-3'>

@@ -10,8 +10,8 @@ export default function StartLearning({ startCourses }) {
     <div className='start-learning py-5 md:py-8'>
       {/* Header */}
       <div className='start-learning-content max-w-[820px] mx-auto'>
-        <h1 className='text-2xl sm:text-3xl md:text-5xl font-bold font-merriweather text-center leading-relaxed tracking-wider'>
-          Populiariausi kursai
+        <h1 className='text-xl sm:text-2xl md:text-3xl font-bold font-merriweather text-center leading-relaxed tracking-wider'>
+          Kursai
         </h1>
       </div>
 

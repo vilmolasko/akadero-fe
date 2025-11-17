@@ -66,7 +66,7 @@ export default function LecturerList() {
         id={id}
         apicall={setApicall}
         endPoint='deleteLecturerByAdmin'
-        type={'Lecturer deleted'}
+        type={'Dėstytojas ištrintas'}
         deleteMessage={
           'Ar tikrai norite ištrinti šį elementą? Šio veiksmo negalima atšaukti ir visi susiję duomenys bus visam laikui pašalinti.'
         }

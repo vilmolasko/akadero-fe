@@ -1,0 +1,60 @@
+{
+  "plans": [
+    {
+      "title": "Nemokamas",
+      "description": "Išbandyk platformos galimybes be įsipareigojimų.",
+      "price": "0€",
+      "period": "mėn",
+      "features": [
+        "Neriboti skelbimai",
+        "Užklausos mygtukas",
+        "Telefono numeris"
+      ],
+      "button": "Registruotis",
+      "highlight": false
+    },
+    {
+      "title": "Partneris",
+      "description": "Pirmenybė rodant kursus paieškos rezultatuose.",
+      "price": "30€",
+      "period": "mėn",
+      "features": [
+        "5 Skelbimai",
+        "Aukštesnė pozicija",
+        "Potencialių užklausų pranešimai",
+        "Užklausos mygtukas",
+        "Telefono numeris",
+        "Individuali registracijos forma",
+        "Aktyvi nuoroda į jūsų svetainę",
+        "Logotipo rodymas",
+        "Organizatorių skiltis",
+        "Skelbimo iškėlimas + 30€/mėn",
+        "Mokėjimų surinkimas"
+      ],
+      "button": "Registruotis",
+      "highlight": true
+    },
+    {
+      "title": "TOP",
+      "description": "Lankstus sprendimas nestandartiniams poreikiams.",
+      "price": "Individualus",
+      "period": "",
+      "features": [
+        "Daugiau nei 5 skelbimai",
+        "Aukštesnė pozicija",
+        "Potencialių užklausų pranešimai",
+        "Užklausos mygtukas",
+        "Telefono numeris",
+        "Individuali registracijos forma",
+        "Aktyvi nuoroda į jūsų svetainę",
+        "Logotipo rodymas",
+        "Organizatorių skiltis",
+        "Išskirtinės sąlygos",
+        "Skelbimo iškėlimas + 30€/mėn",
+        "Mokėjimų surinkimas"
+      ],
+      "button": "Registruotis",
+      "highlight": false
+    }
+  ]
+}

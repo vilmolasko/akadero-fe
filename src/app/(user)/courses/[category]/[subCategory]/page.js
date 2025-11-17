@@ -86,7 +86,7 @@ export default async function CategoryPage(props) {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href={`courses/${category}`}>
+              <BreadcrumbLink href={`/courses/${category}`}>
                 {subCategoryData?.parentCategory?.name}
                 {category}
               </BreadcrumbLink>

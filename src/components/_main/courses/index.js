@@ -11,6 +11,8 @@ import { useSearchParams } from 'next/navigation';
 import * as api from 'src/services';
 import { useQuery } from '@tanstack/react-query';
 import { Spinner } from '@/components/ui/spinner';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const getSearchParams = (searchParams, page, category, subCategory) => {
   const params = new URLSearchParams(searchParams.toString());
@@ -65,6 +67,16 @@ export default function CoursesList({
 
   return (
     <div className='courses-list mt-4 md:mt-8 space-y-4'>
+      <div className='relative h-20 md:h-50 border border-gray-200 rounded-md '>
+        <Link href='/'>
+          <Image
+            src='/banner-2.png'
+            alt='banners'
+            fill
+            className='object-cover rounded-md'
+          />
+        </Link>
+      </div>
       {subCategoriesData && (
         <SubCategoryList
           subCategories={subCategoriesData}

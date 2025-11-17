@@ -70,22 +70,20 @@ export default function DeleteDialog({
               Atšaukti
             </Button>
           </AlertDialogCancel>
-          <AlertDialogAction asChild>
-            <Button
-              variant='destructive'
-              onClick={handleDelete}
-              disabled={isLoading}
-              className='bg-red-600 text-white hover:bg-red-700'>
-              {isLoading ? (
-                <>
-                  <div className='h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent mr-2' />
-                  Ištrinama...
-                </>
-              ) : (
-                'Ištrinti'
-              )}
-            </Button>
-          </AlertDialogAction>
+          <Button
+            variant='defualt'
+            onClick={handleDelete}
+            disabled={isLoading}
+            className='bg-red-500 text-white hover:bg-red-700'>
+            {isLoading ? (
+              <>
+                <div className='h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent mr-2' />
+                Ištrinama...
+              </>
+            ) : (
+              'Ištrinti'
+            )}
+          </Button>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
