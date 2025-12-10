@@ -39,13 +39,13 @@ export default function Providers({ children }) {
                       zIndex: 11,
                     }}>
                     <Image
-                      src='/logo-dark.png'
+                      src='/logo.png'
                       alt='Logo'
                       placeholder='blur'
-                      blurDataURL='/logo-dark.png'
+                      blurDataURL='/logo.png'
                       className='object-contain'
-                      width={190}
-                      height={52}
+                      width={180}
+                      height={180}
                     />
                   </div>
                 }

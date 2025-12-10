@@ -38,7 +38,7 @@ const navItems = [
     icon: BookOpenCheck,
   },
   {
-    label: 'Mokytojai',
+    label: 'Lektoriai',
     href: '/dashboard/lecturers',
     icon: GraduationCap,
   },
@@ -79,7 +79,7 @@ export default function OrganizerSidebar() {
           collapsed ? 'w-20' : 'w-69'
         )}>
         {/* Header */}
-        <div className='min-h-16 flex items-center justify-between px-4 border-b relative'>
+        <div className='min-h-[64px] flex items-center justify-between px-4 border-b relative'>
           {collapsed ? (
             <NextLink href='/'>
               <Image
@@ -93,10 +93,10 @@ export default function OrganizerSidebar() {
           ) : (
             <NextLink href='/'>
               <Image
-                src='/logo-dark.png'
+                src='/logo-dark.jpg'
                 alt='Logo'
-                width={160}
-                height={45}
+                width={240}
+                height={52}
                 className='object-contain'
               />
             </NextLink>
@@ -111,7 +111,7 @@ export default function OrganizerSidebar() {
         </div>
 
         {/* Nav Items */}
-        <nav className='flex-1 p-4 space-y-2 text-[15px]'>
+        <nav className='flex-1 p-4 space-y-2 flex flex-col items-center text-[15px]'>
           {navItems.map(({ label, href, icon: Icon, childrens }) => {
             const isActive =
               pathname === href || pathname.startsWith(`${href}/`);
@@ -126,7 +126,8 @@ export default function OrganizerSidebar() {
                       'w-full flex items-center justify-between px-4 py-2 rounded-md transition-colors font-medium',
                       isOpen
                         ? 'bg-primary-100 text-primary'
-                        : 'text-foreground hover:bg-accent'
+                        : 'text-foreground hover:bg-accent',
+                      collapsed ? 'w-9' : 'w-full'
                     )}>
                     <div className='flex items-center gap-3'>
                       <Icon size={18} />
@@ -216,7 +217,7 @@ export default function OrganizerSidebar() {
           <div className='p-4 border-b'>
             <NextLink href='/'>
               <Image
-                src='/logo-dark.png'
+                src='/logo-dark.jpg'
                 alt='Logo'
                 width={160}
                 height={45}

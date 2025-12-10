@@ -57,12 +57,12 @@ const Footer = () => {
               {/* Logo */}
               <NextLink href='/'>
                 <Image
-                  src='/logo-dark.png'
+                  src='/logo-dark.jpg'
                   alt='Logo'
                   placeholder='blur'
-                  blurDataURL='/logo-dark.png'
+                  blurDataURL='/logo-dark.jpg'
                   className='object-contain'
-                  width={190}
+                  width={240}
                   height={52}
                 />
               </NextLink>
@@ -76,7 +76,9 @@ const Footer = () => {
                     <Mail className='h-4 w-4' />
                   </div>
 
-                  <a href='mailto:mokymai@akadero.lt'>mokymai@akadero.lt</a>
+                  <a href='mailto:mokymai@mokymukatalogas.lt'>
+                    mokymai@mokymukatalogas.lt
+                  </a>
                 </div>
                 <div className='flex items-center gap-3 hover:text-primary transition-colors duration-200'>
                   <div className='h-8 w-8 rounded-md bg-primary-100 text-foreground flex items-center justify-center'>
@@ -162,7 +164,7 @@ const Footer = () => {
         <div className='border-t mt-8 py-5'>
           <div className='flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0'>
             <p className='text-md  tracking-wide text-muted-foreground'>
-              © 2024 akadero. Visos teisės saugomos.
+              © 2024 Mokymukatalogas. Visos teisės saugomos.
             </p>
             <div className='flex space-x-3 md:space-x-6'>
               <NextLink
@@ -196,7 +198,7 @@ const resourceData = [
     link: '/courses',
   },
   {
-    name: 'Mokytojai',
+    name: 'Lektoriai',
     link: '/lecturers',
   },
   {

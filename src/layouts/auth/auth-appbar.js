@@ -11,12 +11,12 @@ export default function AuthAppBar() {
         {/* Logo */}
         <NextLink href='/'>
           <Image
-            src='/logo-dark.png'
+            src='/logo-dark.jpg'
             alt='Logo'
             placeholder='blur'
-            blurDataURL='/logo-dark.png'
+            blurDataURL='/logo-dark.jpg'
             className='object-contain'
-            width={190}
+            width={240}
             height={52}
           />
         </NextLink>

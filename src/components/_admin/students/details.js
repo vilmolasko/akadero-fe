@@ -8,7 +8,7 @@ import React from 'react';
 const columns = [
   { key: 'name', header: 'Pavadinimas' },
   { key: 'category', header: 'Kategorija' },
-  { key: 'lecturers', header: 'Mokytojai' },
+  { key: 'lecturers', header: 'Lektoriai' },
   { key: 'status', header: 'Būsena' },
 ];
 

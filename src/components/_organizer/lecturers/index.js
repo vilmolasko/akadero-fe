@@ -11,7 +11,7 @@ export default function AdminLecturersList() {
       {/* Page Title */}
       <div className='flex items-center justify-between gap-3'>
         <div>
-          <h1 className='text-2xl font-merriweather'>Mokytojai</h1>
+          <h1 className='text-2xl font-merriweather'>Lektoriai</h1>
           {/* Breadcrumbs */}
           <Breadcrumbs />
         </div>
@@ -20,7 +20,7 @@ export default function AdminLecturersList() {
           onClick={() => {
             router.push('/dashboard/lecturers/add');
           }}>
-          Pridėti dėstytoją
+          Pridėtį lektorių
         </Button>
       </div>
       <LecturerList />

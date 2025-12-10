@@ -8,7 +8,7 @@ export default function DashboardPage() {
       {/* Page Title */}
       <div className='flex items-center justify-between gap-3'>
         <div>
-          <h1 className='text-2xl font-merriweather'>Pridėti dėstytoją</h1>
+          <h1 className='text-2xl font-merriweather'>Pridėtį lektorių</h1>
           {/* Breadcrumbs */}
           <Breadcrumbs />
         </div>

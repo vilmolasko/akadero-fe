@@ -28,9 +28,9 @@ export default function TermsPage() {
             Naudojimosi sąlygos ir pinigų grąžinimo politika
           </h1>
           <p className='mt-3 text-base text-foreground max-w-2xl mx-auto'>
-            Šios sąlygos reglamentuoja <strong>akadero.lt</strong> naudojimą ir
-            apibrėžia dalyvių įsipareigojimus, pinigų grąžinimo tvarką bei
-            duomenų saugumo priemones.
+            Šios sąlygos reglamentuoja <strong>Mokymukatalogas.lt</strong>{' '}
+            naudojimą ir apibrėžia dalyvių įsipareigojimus, pinigų grąžinimo
+            tvarką bei duomenų saugumo priemones.
           </p>
         </header>
 
@@ -109,12 +109,13 @@ export default function TermsPage() {
               1. Bendros nuostatos
             </h2>
             <p>
-              Šios naudojimosi sąlygos reglamentuoja <strong>akadero.lt</strong>{' '}
-              platformos (toliau – „Platforma“) naudojimą, kurią administruoja
-              UAB „Akadero“. Registruodamiesi ir naudodamiesi Platforma jūs
-              sutinkate su šiomis sąlygomis ir Privatumo politika.
-              Administratorius gali bet kada atnaujinti šias sąlygas, o
-              naudotojai apie reikšmingus pakeitimus bus informuojami el. paštu.
+              Šios naudojimosi sąlygos reglamentuoja{' '}
+              <strong>mokymukatalogas.lt</strong> platformos (toliau –
+              „Platforma“) naudojimą, kurią administruoja UAB „Mokymukatalogas“.
+              Registruodamiesi ir naudodamiesi Platforma jūs sutinkate su šiomis
+              sąlygomis ir Privatumo politika. Administratorius gali bet kada
+              atnaujinti šias sąlygas, o naudotojai apie reikšmingus pakeitimus
+              bus informuojami el. paštu.
             </p>
           </section>
 
@@ -126,10 +127,10 @@ export default function TermsPage() {
             </h2>
             <p>
               Registruodamiesi į mokymus, dalyviai moka{' '}
-              <strong>registracijos mokestį</strong> UAB „Akadero“. Platforma
-              netvarko kitų mokymų mokesčių – jie derinami tiesiogiai su mokymų
-              organizatoriumi. Registracijos mokestis negarantuoja vietos
-              mokymuose, kol nėra sumokėta visa suma.
+              <strong>registracijos mokestį</strong> UAB „Mokymukatalogas“.
+              Platforma netvarko kitų mokymų mokesčių – jie derinami tiesiogiai
+              su mokymų organizatoriumi. Registracijos mokestis negarantuoja
+              vietos mokymuose, kol nėra sumokėta visa suma.
             </p>
           </section>
 
@@ -167,8 +168,9 @@ export default function TermsPage() {
             </h2>
             <p>
               Visi dalyvių duomenys saugomi saugioje Platformos sistemoje.
-              Akadero saugo asmens duomenis pagal BDAR ir taikomus įstatymus,
-              užtikrindama konfidencialumą ir atsakingą duomenų tvarkymą.
+              Mokymukatalogas saugo asmens duomenis pagal BDAR ir taikomus
+              įstatymus, užtikrindama konfidencialumą ir atsakingą duomenų
+              tvarkymą.
             </p>
           </section>
 
@@ -193,11 +195,14 @@ export default function TermsPage() {
               7. Baigiamosios nuostatos
             </h2>
             <p>
-              Akadero pasilieka teisę keisti šias sąlygas. Dalyviai bus
+              Mokymukatalogas pasilieka teisę keisti šias sąlygas. Dalyviai bus
               informuojami apie reikšmingus pakeitimus el. paštu. Ginčai bus
               sprendžiami derybų keliu arba, jei reikia, pagal Lietuvos
               Respublikos įstatymus. Dėl klausimų galite kreiptis el. paštu{' '}
-              <a href='mailto:info@akadero.lt'>info@akadero.lt</a>.
+              <a href='mailto:info@mokymukatalogas.lt'>
+                info@mokymukatalogas.lt
+              </a>
+              .
             </p>
           </section>
 
@@ -209,8 +214,8 @@ export default function TermsPage() {
               <AccordionContent>
                 <p>
                   Šios sąlygos yra teisiškai privalomos ir taikomos visiems
-                  Akadero Platformos naudotojams. Toliau naudojantis Platforma
-                  laikoma, kad sutinkate su visais atnaujinimais.
+                  Mokymukatalogas Platformos naudotojams. Toliau naudojantis
+                  Platforma laikoma, kad sutinkate su visais atnaujinimais.
                 </p>
               </AccordionContent>
             </AccordionItem>

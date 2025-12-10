@@ -54,12 +54,12 @@ export default function Appbar() {
         {/* Logo */}
         <NextLink href='/'>
           <Image
-            src='/logo-dark.png'
+            src='/logo-dark.jpg'
             alt='Logo'
             placeholder='blur'
-            blurDataURL='/logo-dark.png'
+            blurDataURL='/logo-dark.jpg'
             className='object-contain'
-            width={190}
+            width={240}
             height={52}
           />
         </NextLink>
@@ -82,7 +82,7 @@ export default function Appbar() {
                 ? 'text-primary font-semibold'
                 : 'text-foreground hover:text-primary transition'
             }>
-            Mokytojai
+            Lektoriai
           </NextLink>
           <NextLink
             href='/organizers'
@@ -198,7 +198,7 @@ export default function Appbar() {
                     <NextLink
                       href='/lecturers'
                       className='hover:text-primary'>
-                      Mokytojai
+                      Lektoriai
                     </NextLink>
                     <NextLink
                       href='/organizers'

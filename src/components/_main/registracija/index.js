@@ -26,13 +26,13 @@ export default function PricingPage() {
       {/* Header */}
       <section className='text-center mb-12'>
         <h1 className='text-xl md:text-3xl font-bold mb-4 font-merriweather'>
-          Nemokamai prisijunkite prie Akadero.lt platformos
+          Nemokamai prisijunkite prie Mokymukatalogas.lt platformos
         </h1>
         <p className='text-normal text-muted-foreground max-w-3xl mx-auto'>
-          Akadero.lt – tai nemokamas ir vienas labiausiai lankomų švietimo bei
-          mokymo paslaugų katalogų Lietuvoje. Platformoje galite paprastai ir
-          rezultatyviai dalintis informacija apie visus savo rengiamus
-          profesinio tobulėjimo renginius ir mokymo programas.
+          Mokymukatalogas.lt – tai nemokamas ir vienas labiausiai lankomų
+          švietimo bei mokymo paslaugų katalogų Lietuvoje. Platformoje galite
+          paprastai ir rezultatyviai dalintis informacija apie visus savo
+          rengiamus profesinio tobulėjimo renginius ir mokymo programas.
         </p>
       </section>
 

@@ -2,11 +2,11 @@ import Registracija from '@/components/_main/registracija';
 import React from 'react';
 
 export const metadata = {
-  title: 'Prisijunkite prie Akadero.lt | Nemokamas švietimo katalogas',
+  title: 'Prisijunkite prie Mokymukatalogas.lt | Nemokamas švietimo katalogas',
   description:
-    'Akadero.lt – tai nemokamas ir vienas labiausiai lankomų švietimo bei mokymo paslaugų katalogų Lietuvoje. Paprastai ir rezultatyviai dalinkitės informacija apie savo renginius ir mokymo programas.',
+    'Mokymukatalogas.lt – tai nemokamas ir vienas labiausiai lankomų švietimo bei mokymo paslaugų katalogų Lietuvoje. Paprastai ir rezultatyviai dalinkitės informacija apie savo renginius ir mokymo programas.',
   keywords: [
-    'Akadero',
+    'Mokymukatalogas.lt',
     'mokymai',
     'švietimo katalogas',
     'kursai',
@@ -14,11 +14,11 @@ export const metadata = {
     'registracija',
   ],
   openGraph: {
-    title: 'Nemokamai prisijunkite prie Akadero.lt',
+    title: 'Nemokamai prisijunkite prie Mokymukatalogas.lt',
     description:
       'Nemokamas švietimo ir mokymo paslaugų katalogas Lietuvoje – talpinkite savo renginius ir mokymo programas.',
-    url: 'https://www.akadero.lt/registracija',
-    siteName: 'Akadero.lt',
+    url: 'https://www.mokymukatalogas.lt/registracija',
+    siteName: 'Mokymukatalogas.lt',
   },
 };
 

@@ -29,8 +29,8 @@ export default function PrivacyPage() {
           </h1>
           <p className='mt-3 text-base text-foreground max-w-2xl mx-auto'>
             Šioje privatumo politikoje paaiškinama, kaip{' '}
-            <strong>akadero.lt</strong> renka, naudoja ir saugo asmens duomenis
-            pagal BDAR reikalavimus.
+            <strong>Mokymukatalogas.lt</strong> renka, naudoja ir saugo asmens
+            duomenis pagal BDAR reikalavimus.
           </p>
         </header>
 
@@ -85,10 +85,10 @@ export default function PrivacyPage() {
               1. Trečiųjų šalių slapukai
             </h2>
             <p>
-              Akadero naudoja trečiųjų šalių slapukus, kad rinktų anoniminius
-              duomenis apie apsilankymus, įrenginius ir sąveikas. Šie duomenys
-              padeda gerinti svetainės veikimą ir naudotojo patirtį. Be jūsų
-              sutikimo asmeninė informacija nerenkama.
+              Mokymukatalogas naudoja trečiųjų šalių slapukus, kad rinktų
+              anoniminius duomenis apie apsilankymus, įrenginius ir sąveikas.
+              Šie duomenys padeda gerinti svetainės veikimą ir naudotojo
+              patirtį. Be jūsų sutikimo asmeninė informacija nerenkama.
             </p>
           </section>
 
@@ -102,8 +102,9 @@ export default function PrivacyPage() {
               Pateikdami užklausos arba registracijos formą, sutinkate, kad jūsų
               duomenys būtų saugomi mažiausiai <strong>5 metus</strong>. Ši
               informacija naudojama tik teikiant informaciją apie kursus,
-              mokymus ar susijusius pasiūlymus. Akadero niekada neperduoda
-              asmens duomenų trečiosioms šalims, nebent to reikalauja įstatymas.
+              mokymus ar susijusius pasiūlymus. Mokymukatalogas niekada
+              neperduoda asmens duomenų trečiosioms šalims, nebent to reikalauja
+              įstatymas.
             </p>
           </section>
 
@@ -127,10 +128,10 @@ export default function PrivacyPage() {
             </h2>
             <p>
               Mokymų organizatoriai, skelbiantys turinį, yra atsakingi už BDAR
-              ir kitų įstatymų laikymąsi. Akadero suteikia platformą, tačiau
-              nėra atsakinga už organizatorių paskelbtus duomenis. Kiekvienas
-              organizatorius privalo atsakingai ir saugiai tvarkyti surinktus
-              duomenis.
+              ir kitų įstatymų laikymąsi. Mokymukatalogas suteikia platformą,
+              tačiau nėra atsakinga už organizatorių paskelbtus duomenis.
+              Kiekvienas organizatorius privalo atsakingai ir saugiai tvarkyti
+              surinktus duomenis.
             </p>
           </section>
 
@@ -141,10 +142,11 @@ export default function PrivacyPage() {
               5. Asmens duomenų apsauga
             </h2>
             <p>
-              Akadero taiko modernias saugumo priemones, kad apsaugotų naudotojų
-              duomenis nuo neteisėtos prieigos ar netinkamo naudojimo. Tačiau
-              pateikdami informaciją trečiosioms šalims jūs prisiimate
-              atsakomybę už duomenis, pateiktus už Akadero kontrolės ribų.
+              Mokymukatalogas taiko modernias saugumo priemones, kad apsaugotų
+              naudotojų duomenis nuo neteisėtos prieigos ar netinkamo naudojimo.
+              Tačiau pateikdami informaciją trečiosioms šalims jūs prisiimate
+              atsakomybę už duomenis, pateiktus už Mokymukatalogas kontrolės
+              ribų.
             </p>
           </section>
 
@@ -155,8 +157,8 @@ export default function PrivacyPage() {
               6. Platformos atsakomybės ribojimas
             </h2>
             <p>
-              Akadero veikia kaip skelbimų platforma ir nėra atsakinga už
-              išorinių organizatorių duomenų tvarkymą. Organizatoriai yra
+              Mokymukatalogas veikia kaip skelbimų platforma ir nėra atsakinga
+              už išorinių organizatorių duomenų tvarkymą. Organizatoriai yra
               savarankiškai atsakingi už BDAR laikymąsi ir saugų lankytojų
               duomenų tvarkymą.
             </p>
@@ -170,7 +172,10 @@ export default function PrivacyPage() {
               Jūs turite teisę susipažinti su savo duomenimis, juos taisyti,
               ištrinti ar apriboti jų naudojimą pagal taikomus įstatymus.
               Klausimams kreipkitės el. paštu{' '}
-              <a href='mailto:info@akadero.lt'>info@akadero.lt</a>.
+              <a href='mailto:info@mokymukatalogas.lt'>
+                info@mokymukatalogas.lt
+              </a>
+              .
             </p>
             <p>
               Klausimus dėl šios privatumo politikos ar duomenų tvarkymo taip

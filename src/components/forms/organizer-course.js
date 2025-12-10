@@ -425,7 +425,7 @@ export default function OrganizerCourseForm({
 
           <div className='grid grid-cols-1'>
             <div>
-              <Label>Mokytojai (daug pasirinkimų)</Label>
+              <Label>Lektoriai (daug pasirinkimų)</Label>
               <Multiselect
                 options={lecturers}
                 displayValue='name'

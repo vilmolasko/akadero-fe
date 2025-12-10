@@ -55,7 +55,7 @@ const navItems = [
     icon: Building2,
   },
   {
-    label: 'Mokytojai',
+    label: 'Lektoriai',
     href: '/admin/lecturers',
     icon: GraduationCap,
   },
@@ -89,14 +89,14 @@ export default function Sidebar() {
           collapsed ? 'w-20' : 'w-68'
         )}>
         {/* Header */}
-        <div className='h-16 flex items-center justify-between px-4 border-b'>
+        <div className='min-h-[64px] flex items-center justify-between px-4 border-b'>
           {collapsed ? (
             <NextLink href='/'>
               <Image
                 src='/logo.png'
                 alt='Logo'
                 placeholder='blur'
-                blurDataURL='/logo-dark.png'
+                blurDataURL='/logo-dark.jpg'
                 className='object-contain'
                 width={40}
                 height={40}
@@ -105,13 +105,13 @@ export default function Sidebar() {
           ) : (
             <NextLink href='/'>
               <Image
-                src='/logo-dark.png'
+                src='/logo-dark.jpg'
                 alt='Logo'
                 placeholder='blur'
-                blurDataURL='/logo-dark.png'
+                blurDataURL='/logo-dark.jpg'
                 className='object-contain'
-                width={160}
-                height={45}
+                width={240}
+                height={52}
               />
             </NextLink>
           )}
@@ -125,7 +125,7 @@ export default function Sidebar() {
         </div>
 
         {/* Nav Items */}
-        <nav className='flex-1 p-4 space-y-2'>
+        <nav className='flex-1 p-4 space-y-2 flex flex-col items-center'>
           {navItems.map(({ label, href, icon: Icon }) => {
             const active = pathname === href || pathname.startsWith(`${href}/`);
             return (
@@ -136,9 +136,10 @@ export default function Sidebar() {
                   'flex items-center gap-3 px-2 py-2 rounded-md text-normal font-medium transition-colors',
                   active
                     ? 'bg-primary-100 text-primary'
-                    : 'text-forground hover:bg-accent'
+                    : 'text-forground hover:bg-accent',
+                  collapsed ? 'w-9' : 'w-full'
                 )}>
-                <Icon size={18} />
+                <Icon size={20} />
                 {!collapsed && <span>{label}</span>}
               </NextLink>
             );
@@ -162,10 +163,10 @@ export default function Sidebar() {
           {/* Logo */}
           <NextLink href='/'>
             <Image
-              src='/logo-dark.png'
+              src='/logo-dark.jpg'
               alt='Logo'
               placeholder='blur'
-              blurDataURL='/logo-dark.png'
+              blurDataURL='/logo-dark.jpg'
               className='object-contain'
               width={190}
               height={52}

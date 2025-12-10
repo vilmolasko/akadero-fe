@@ -1,21 +1,21 @@
 import ContactUs from '@/components/contact';
 
 export const metadata = {
-  title: 'Kontaktai - Akadero.lt',
+  title: 'Kontaktai - Mokymukatalogas.lt',
   description:
-    'Susisiekite su Akadero.lt mokymų organizatoriais dėl pagalbos, papildomos informacijos ar klausimų.',
+    'Susisiekite su Mokymukatalogas.lt mokymų organizatoriais dėl pagalbos, papildomos informacijos ar klausimų.',
   openGraph: {
-    title: 'Kontaktai - Akadero.lt',
+    title: 'Kontaktai - Mokymukatalogas.lt',
     description:
-      'Susisiekite su Akadero.lt mokymų organizatoriais dėl pagalbos, papildomos informacijos ar klausimų.',
+      'Susisiekite su Mokymukatalogas.lt mokymų organizatoriais dėl pagalbos, papildomos informacijos ar klausimų.',
     type: 'website',
-    url: 'https://akadero.lt/kontaktai',
+    url: 'https://mokymukatalogas.lt/kontaktai',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Akadero.lt Kontaktai',
+        alt: 'Mokymukatalogas.lt Kontaktai',
       },
     ],
   },
