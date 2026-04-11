@@ -64,9 +64,9 @@ export default function OrganizerSidebar() {
 
   const toggleMenu = (label) => {
     setOpenMenus((prev) =>
-      prev.includes(label)
-        ? prev.filter((item) => item !== label)
-        : [...prev, label]
+      prev.includes(label) ?
+        prev.filter((item) => item !== label)
+      : [...prev, label],
     );
   };
 
@@ -76,11 +76,11 @@ export default function OrganizerSidebar() {
       <aside
         className={cn(
           'hidden md:flex flex-col h-screen bg-card border-r transition-all duration-300 relative ',
-          collapsed ? 'w-20' : 'w-69'
+          collapsed ? 'w-20' : 'w-69',
         )}>
         {/* Header */}
         <div className='min-h-[64px] flex items-center justify-between px-4 border-b relative'>
-          {collapsed ? (
+          {collapsed ?
             <NextLink href='/'>
               <Image
                 src='/logo.png'
@@ -90,8 +90,7 @@ export default function OrganizerSidebar() {
                 className='object-contain'
               />
             </NextLink>
-          ) : (
-            <NextLink href='/'>
+          : <NextLink href='/'>
               <Image
                 src='/logo-dark.jpg'
                 alt='Logo'
@@ -100,13 +99,15 @@ export default function OrganizerSidebar() {
                 className='object-contain'
               />
             </NextLink>
-          )}
+          }
           <Button
             variant='ghost'
             size='icon'
             className='absolute right-[-14px] border rounded-full bg-accent size-7'
             onClick={() => setCollapsed(!collapsed)}>
-            {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+            {collapsed ?
+              <ChevronRight size={18} />
+            : <ChevronLeft size={18} />}
           </Button>
         </div>
 
@@ -124,28 +125,26 @@ export default function OrganizerSidebar() {
                     onClick={() => toggleMenu(label)}
                     className={cn(
                       'w-full flex items-center justify-between px-4 py-2 rounded-md transition-colors font-medium',
-                      isOpen
-                        ? 'bg-primary-100 text-primary'
-                        : 'text-foreground hover:bg-accent',
-                      collapsed ? 'w-9' : 'w-full'
+                      isOpen ?
+                        'bg-primary-100 text-primary'
+                      : 'text-foreground hover:bg-accent',
+                      collapsed ? 'w-9' : 'w-full',
                     )}>
                     <div className='flex items-center gap-3'>
                       <Icon size={18} />
                       {!collapsed && <span>{label}</span>}
                     </div>
                     {!collapsed &&
-                      (isOpen ? (
+                      (isOpen ?
                         <ChevronUp size={16} />
-                      ) : (
-                        <ChevronDown size={16} />
-                      ))}
+                      : <ChevronDown size={16} />)}
                   </button>
 
                   {/* Children */}
                   <div
                     className={cn(
                       'pl-10 mt-1 space-y-1 overflow-hidden transition-all duration-300',
-                      isOpen && !collapsed ? 'max-h-40' : 'max-h-0'
+                      isOpen && !collapsed ? 'max-h-40' : 'max-h-0',
                     )}>
                     {childrens.map((child) => {
                       const active =
@@ -157,9 +156,9 @@ export default function OrganizerSidebar() {
                           href={child.href}
                           className={cn(
                             'block px-3 py-1.5 rounded-md text-[14px] transition-colors',
-                            active
-                              ? 'bg-primary-50 text-primary'
-                              : 'text-muted-foreground hover:bg-accent'
+                            active ?
+                              'bg-primary-50 text-primary'
+                            : 'text-muted-foreground hover:bg-accent',
                           )}>
                           {child.label}
                         </NextLink>
@@ -176,9 +175,9 @@ export default function OrganizerSidebar() {
                 href={href}
                 className={cn(
                   'flex items-center gap-3 px-4 py-2 rounded-md font-medium transition-colors',
-                  isActive
-                    ? 'bg-primary-100 text-primary'
-                    : 'text-foreground hover:bg-accent'
+                  isActive ?
+                    'bg-primary-100 text-primary'
+                  : 'text-foreground hover:bg-accent',
                 )}>
                 <Icon size={18} />
                 {!collapsed && <span>{label}</span>}
@@ -186,7 +185,7 @@ export default function OrganizerSidebar() {
             );
           })}
           {!collapsed && (
-            <div className='relative h-90 mt-2 border border-gray-200 rounded-md   '>
+            <div className='relative w-full h-90 mt-2 border border-gray-200 rounded-md'>
               <NextLink href='/'>
                 <Image
                   src='/banner.png'
@@ -237,19 +236,17 @@ export default function OrganizerSidebar() {
                       onClick={() => toggleMenu(label)}
                       className={cn(
                         'w-full flex items-center justify-between px-3 py-2 rounded-md text-[15px] font-medium transition-colors',
-                        isOpen
-                          ? 'bg-primary-100 text-primary'
-                          : 'text-foreground hover:bg-accent'
+                        isOpen ?
+                          'bg-primary-100 text-primary'
+                        : 'text-foreground hover:bg-accent',
                       )}>
                       <div className='flex items-center gap-3'>
                         <Icon size={18} />
                         <span>{label}</span>
                       </div>
-                      {isOpen ? (
+                      {isOpen ?
                         <ChevronUp size={16} />
-                      ) : (
-                        <ChevronDown size={16} />
-                      )}
+                      : <ChevronDown size={16} />}
                     </button>
 
                     {isOpen && (
@@ -260,9 +257,9 @@ export default function OrganizerSidebar() {
                             href={child.href}
                             className={cn(
                               'block px-3 py-1.5 rounded-md text-[14px] transition-colors',
-                              pathname === child.href
-                                ? 'bg-primary-50 text-primary'
-                                : 'text-muted-foreground hover:bg-accent'
+                              pathname === child.href ?
+                                'bg-primary-50 text-primary'
+                              : 'text-muted-foreground hover:bg-accent',
                             )}>
                             {child.label}
                           </NextLink>
@@ -279,9 +276,9 @@ export default function OrganizerSidebar() {
                   href={href}
                   className={cn(
                     'flex items-center gap-3 px-3 py-2 rounded-md text-[15px] font-medium transition-colors',
-                    isActive
-                      ? 'bg-primary-100 text-primary'
-                      : 'text-foreground hover:bg-accent'
+                    isActive ?
+                      'bg-primary-100 text-primary'
+                    : 'text-foreground hover:bg-accent',
                   )}>
                   <Icon size={18} />
                   <span>{label}</span>

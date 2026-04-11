@@ -34,7 +34,7 @@ const Footer = () => {
         values.email
           .toLowerCase()
           .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
           )
       ) {
         setloading(true);
@@ -76,16 +76,9 @@ const Footer = () => {
                     <Mail className='h-4 w-4' />
                   </div>
 
-                  <a href='mailto:mokymai@mokymukatalogas.lt'>
-                    mokymai@mokymukatalogas.lt
+                  <a href='mailto:info@mokymukatalogas.lt'>
+                    info@mokymukatalogas.lt
                   </a>
-                </div>
-                <div className='flex items-center gap-3 hover:text-primary transition-colors duration-200'>
-                  <div className='h-8 w-8 rounded-md bg-primary-100 text-foreground flex items-center justify-center'>
-                    <PhoneCall className='h-4 w-4' />
-                  </div>
-
-                  <a href='tel:+37068779075'>+37068779075</a>
                 </div>
               </div>
             </div>
@@ -151,7 +144,9 @@ const Footer = () => {
                     <button
                       type='submit'
                       className='px-3 md:px-4 py-2 bg-primary cursor-pointer text-white rounded-r-md hover:bg-primary-500 transition-colors duration-200'>
-                      {loading ? <Spinner /> : <Search className='h-5 w-5' />}
+                      {loading ?
+                        <Spinner />
+                      : <Search className='h-5 w-5' />}
                     </button>
                   </div>
                 </div>
