@@ -19,6 +19,7 @@ import * as api from '@/services';
 export default function ContactUs() {
   const [showNumber, setShowNumber] = useState(false);
   const [captchaValue, setCaptchaValue] = useState(null);
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
   const { mutate, isPending } = useMutation({
     mutationFn: api.createConatctUs,
@@ -51,7 +52,7 @@ export default function ContactUs() {
         .test(
           'is-valid-phone',
           'Neteisingas telefono numeris',
-          (value) => value && isValidPhoneNumber(value)
+          (value) => value && isValidPhoneNumber(value),
         ),
       message: Yup.string().required('Laukas Turinio yra privalomas'),
     }),
@@ -63,65 +64,68 @@ export default function ContactUs() {
       }
       mutate({
         ...values,
+        recaptchaToken: captchaValue,
       });
     },
   });
 
   return (
-    <main className=' max-w-6xl mx-auto py-12 px-4 '>
-      <h1 className='text-lg md:text-4xl font-bold text-foreground text-center mb-8'>
+    <main className=" max-w-6xl mx-auto py-12 px-4 ">
+      <h1 className="text-lg md:text-4xl font-bold text-foreground text-center mb-8">
         Pagalba mokymų organizatoriams
       </h1>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Left Card - Contact Info */}
         <Card>
-          <CardContent className='p-6 space-y-4'>
-            <div className='space-y-3 text-foreground'>
+          <CardContent className="p-6 space-y-4">
+            <div className="space-y-3 text-foreground">
               <p>
-                <span className='font-semibold'>Įmonė:</span> UAB Baltic
+                <span className="font-semibold">Įmonė:</span> UAB Baltic
                 Learning Group
               </p>
               <p>
-                <span className='font-semibold'>Įmonės kodas:</span> 307055707
+                <span className="font-semibold">Įmonės kodas:</span> 307055707
               </p>
-              <p className='flex items-center gap-2'>
-                <Mail className='h-5 w-5 text-foreground' />
+              <p className="flex items-center gap-2">
+                <Mail className="h-5 w-5 text-foreground" />
                 <span>
-                  <span className='font-semibold'>El. paštas:</span>{' '}
+                  <span className="font-semibold">El. paštas:</span>{' '}
                   <a
-                    href='mailto:info@mokymukatalogas.lt'
-                    className='text-blue-600 hover:underline'>
+                    href="mailto:info@mokymukatalogas.lt"
+                    className="text-blue-600 hover:underline"
+                  >
                     info@mokymukatalogas.lt
                   </a>
                 </span>
               </p>
-              <p className='flex items-center gap-2'>
-                <Phone className='h-5 w-5 text-foreground' />
-                <span className='font-semibold'>Telefonas:</span>{' '}
+              <p className="flex items-center gap-2">
+                <Phone className="h-5 w-5 text-foreground" />
+                <span className="font-semibold">Telefonas:</span>{' '}
                 {showNumber ? (
-                  <span className='text-foreground font-medium'>
+                  <span className="text-foreground font-medium">
                     +370 687 79075
                   </span>
                 ) : (
                   <Button
-                    variant='link'
-                    className='p-0 text-green-600 font-medium'
-                    onClick={() => setShowNumber(true)}>
+                    variant="link"
+                    className="p-0 text-green-600 font-medium"
+                    onClick={() => setShowNumber(true)}
+                  >
                     Rodyti numerį
                   </Button>
                 )}
               </p>
-              <p className='flex items-start gap-2'>
-                <MapPin className='h-5 w-5 text-foreground mt-1' />
+              <p className="flex items-start gap-2">
+                <MapPin className="h-5 w-5 text-foreground mt-1" />
                 <span>
-                  <span className='font-semibold'>Adresas:</span> Ozo g. 27,
+                  <span className="font-semibold">Adresas:</span> Ozo g. 27,
                   Vilnius, LT-08200
                 </span>
               </p>
-              <p className='flex items-center gap-2'>
-                <Clock className='h-5 w-5 text-foreground' />
+              <p className="flex items-center gap-2">
+                <Clock className="h-5 w-5 text-foreground" />
                 <span>
-                  <span className='font-semibold'>Darbo laikas:</span> I-IV 9:00
+                  <span className="font-semibold">Darbo laikas:</span> I-IV 9:00
                   - 16:00, V 10:00 - 16:00
                 </span>
               </p>
@@ -131,22 +135,23 @@ export default function ContactUs() {
 
         {/* Right Card - Contact Form */}
         <Card>
-          <CardContent className='p-6'>
-            <h2 className='text-xl font-semibold'>Parašykite mums</h2>
-            <p className='text-normal text-muted-foreground mb-2'>
+          <CardContent className="p-6">
+            <h2 className="text-xl font-semibold">Parašykite mums</h2>
+            <p className="text-normal text-muted-foreground mb-2">
               Laukiame žinutės, jeigu turite klausimų, reikalinga papildoma
               informacija ar pagalba.
             </p>
 
             <form
               onSubmit={formik.handleSubmit}
-              className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+              className="grid grid-cols-1 md:grid-cols-2 gap-2"
+            >
               {/* Name */}
-              <div className='space-y-1'>
-                <Label htmlFor='name'>Vardas</Label>
+              <div className="space-y-1">
+                <Label htmlFor="name">Vardas</Label>
                 <Input
-                  id='name'
-                  name='name'
+                  id="name"
+                  name="name"
                   value={formik.values.name}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -157,17 +162,17 @@ export default function ContactUs() {
                   }
                 />
                 {formik.touched.name && formik.errors.name && (
-                  <p className='text-sm text-red-500'>{formik.errors.name}</p>
+                  <p className="text-sm text-red-500">{formik.errors.name}</p>
                 )}
               </div>
 
               {/* Email */}
-              <div className='space-y-1'>
-                <Label htmlFor='email'>El. paštas</Label>
+              <div className="space-y-1">
+                <Label htmlFor="email">El. paštas</Label>
                 <Input
-                  id='email'
-                  name='email'
-                  type='email'
+                  id="email"
+                  name="email"
+                  type="email"
                   value={formik.values.email}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -178,20 +183,20 @@ export default function ContactUs() {
                   }
                 />
                 {formik.touched.email && formik.errors.email && (
-                  <p className='text-sm text-red-500'>{formik.errors.email}</p>
+                  <p className="text-sm text-red-500">{formik.errors.email}</p>
                 )}
               </div>
 
               {/* Phone */}
-              <div className='space-y-1 md:col-span-2'>
-                <Label htmlFor='phone'>Telefonas</Label>
+              <div className="space-y-1 md:col-span-2">
+                <Label htmlFor="phone">Telefonas</Label>
                 <PhoneInput
-                  id='phone'
-                  name='phone'
-                  placeholder='+370 600 00000'
+                  id="phone"
+                  name="phone"
+                  placeholder="+370 600 00000"
                   value={formik.values.phone}
                   onChange={(value) => formik.setFieldValue('phone', value)}
-                  defaultCountry='LT'
+                  defaultCountry="LT"
                   countries={['LT']}
                   international
                   countryCallingCodeEditable={false}
@@ -202,18 +207,18 @@ export default function ContactUs() {
                   }`}
                 />
                 {formik.touched.phone && formik.errors.phone && (
-                  <p className='text-sm text-red-500'>{formik.errors.phone}</p>
+                  <p className="text-sm text-red-500">{formik.errors.phone}</p>
                 )}
               </div>
 
               {/* Message */}
-              <div className='space-y-1 md:col-span-2'>
-                <Label htmlFor='message'>Turinys *</Label>
+              <div className="space-y-1 md:col-span-2">
+                <Label htmlFor="message">Turinys *</Label>
                 <Textarea
-                  id='message'
-                  name='message'
+                  id="message"
+                  name="message"
                   rows={4}
-                  placeholder='Įrašykite savo klausimą...'
+                  placeholder="Įrašykite savo klausimą..."
                   value={formik.values.message}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -224,23 +229,21 @@ export default function ContactUs() {
                   }
                 />
                 {formik.touched.message && formik.errors.message && (
-                  <p className='text-sm text-red-500'>
+                  <p className="text-sm text-red-500">
                     {formik.errors.message}
                   </p>
                 )}
               </div>
 
               {/* Google reCAPTCHA */}
-              <div className=' md:col-span-2'>
+              <div className=" md:col-span-2">
                 <ReCAPTCHA
-                  sitekey={'6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
+                  sitekey={recaptchaSiteKey}
                   onChange={(value) => setCaptchaValue(value)}
                 />
               </div>
 
-              <Button
-                type='submit'
-                disabled={isPending}>
+              <Button type="submit" disabled={isPending}>
                 {isPending ? 'Siunčiama...' : 'Siųsti žinutę'}
               </Button>
             </form>
@@ -249,21 +252,15 @@ export default function ContactUs() {
       </div>
 
       {/* Footer Links */}
-      <div className='max-w-6xl mx-auto mt-6 flex justify-center flex-wrap gap-3'>
-        <Link
-          href='/'
-          passHref>
-          <Button variant='secondary'>Grįžti į pradžią</Button>
+      <div className="max-w-6xl mx-auto mt-6 flex justify-center flex-wrap gap-3">
+        <Link href="/" passHref>
+          <Button variant="secondary">Grįžti į pradžią</Button>
         </Link>
-        <Link
-          href='/privacy-policy'
-          passHref>
-          <Button variant='outline'>Privatumo politika</Button>
+        <Link href="/privacy-policy" passHref>
+          <Button variant="outline">Privatumo politika</Button>
         </Link>
-        <Link
-          href='/refund-policy'
-          passHref>
-          <Button variant='outline'>Naudojimosi sąlygos</Button>
+        <Link href="/refund-policy" passHref>
+          <Button variant="outline">Naudojimosi sąlygos</Button>
         </Link>
       </div>
     </main>
