@@ -1,5 +1,18 @@
 import http from './http';
 
+const toQueryString = (params = {}) => {
+  if (typeof params === 'string') return params;
+
+  const query = new URLSearchParams();
+
+  Object.entries(params || {}).forEach(([key, value]) => {
+    if (value === undefined || value === null || value === '') return;
+    query.append(key, String(value));
+  });
+
+  return query.toString();
+};
+
 //------------ Auth -------------  //
 
 export const register = async ({ ...payload }) => {
@@ -101,7 +114,7 @@ export const updateSubCategoryByAdmin = async ({ ...payload }) => {
   const { currentSlug, ...others } = payload;
   const { data } = await http.put(
     `/admin/sub-categories/${currentSlug}`,
-    others
+    others,
   );
   return data;
 };
@@ -215,6 +228,29 @@ export const getNewsletter = async (params) => {
   const { data } = await http.get(`/admin/newsletter?${params}`);
   return data;
 };
+
+//  ------------ Admin Emails -------------  //
+export const getEmailThreadsByAdmin = async (params = {}) => {
+  const query = toQueryString(params);
+  const endpoint = query ? `/admin/emails?${query}` : '/admin/emails';
+  const { data } = await http.get(endpoint);
+  return data;
+};
+
+export const getEmailThreadByAdmin = async (id) => {
+  const { data } = await http.get(`/admin/emails/${id}`);
+  return data;
+};
+
+export const replyEmailThreadByAdmin = async ({ id, ...payload }) => {
+  const { data } = await http.post(`/admin/emails/${id}/reply`, payload);
+  return data;
+};
+
+export const deleteEmailThreadByAdmin = async (id) => {
+  const { data } = await http.delete(`/admin/emails/${id}`);
+  return data;
+};
 //  ------------ Admin Profile -------------  //
 
 export const getProfile = async () => {
@@ -233,7 +269,7 @@ export const getAllOrganizerLecturers = async () => {
 };
 export const getAnalyticsByOrganizer = async (range) => {
   const { data } = await http.get(
-    `/organizer/dashboard-analytics?range=${range}`
+    `/organizer/dashboard-analytics?range=${range}`,
   );
   return data;
 };
@@ -359,7 +395,7 @@ export const registerStudent = async ({ ...payload }) => {
   const { courseId, scheduleId, ...others } = payload;
   const { data } = await http.post(
     `/courses/${courseId}/schedules/${scheduleId}/students`,
-    others
+    others,
   );
   return data;
 };

@@ -14,6 +14,7 @@ import {
   GraduationCap,
   Building2,
   Mails,
+  Mail,
   BookOpenCheck,
 } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -70,6 +71,11 @@ const navItems = [
     icon: Mails,
   },
   {
+    label: 'El. laiškai',
+    href: '/admin/emails',
+    icon: Mail,
+  },
+  {
     label: 'Nustatymai',
     href: '/admin/settings',
     icon: Settings,
@@ -86,46 +92,48 @@ export default function Sidebar() {
       <aside
         className={cn(
           'hidden md:flex flex-col h-screen bg-card border-r transition-all duration-300 relative',
-          collapsed ? 'w-20' : 'w-68'
-        )}>
+          collapsed ? 'w-20' : 'w-68',
+        )}
+      >
         {/* Header */}
-        <div className='min-h-[64px] flex items-center justify-between px-4 border-b'>
+        <div className="min-h-[64px] flex items-center justify-between px-4 border-b">
           {collapsed ? (
-            <NextLink href='/'>
+            <NextLink href="/">
               <Image
-                src='/logo.png'
-                alt='Logo'
-                placeholder='blur'
-                blurDataURL='/logo-dark.jpg'
-                className='object-contain'
+                src="/logo.png"
+                alt="Logo"
+                placeholder="blur"
+                blurDataURL="/logo-dark.jpg"
+                className="object-contain"
                 width={40}
                 height={40}
               />
             </NextLink>
           ) : (
-            <NextLink href='/'>
+            <NextLink href="/">
               <Image
-                src='/logo-dark.jpg'
-                alt='Logo'
-                placeholder='blur'
-                blurDataURL='/logo-dark.jpg'
-                className='object-contain'
+                src="/logo-dark.jpg"
+                alt="Logo"
+                placeholder="blur"
+                blurDataURL="/logo-dark.jpg"
+                className="object-contain"
                 width={240}
                 height={52}
               />
             </NextLink>
           )}
           <Button
-            variant='ghost'
-            size='icon'
-            className='absolute right-[-14px] border rounded-full bg-accent size-7'
-            onClick={() => setCollapsed(!collapsed)}>
+            variant="ghost"
+            size="icon"
+            className="absolute right-[-14px] border rounded-full bg-accent size-7"
+            onClick={() => setCollapsed(!collapsed)}
+          >
             {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
           </Button>
         </div>
 
         {/* Nav Items */}
-        <nav className='flex-1 p-4 space-y-2 flex flex-col items-center'>
+        <nav className="flex-1 p-4 space-y-2 flex flex-col items-center">
           {navItems.map(({ label, href, icon: Icon }) => {
             const active = pathname === href || pathname.startsWith(`${href}/`);
             return (
@@ -137,8 +145,9 @@ export default function Sidebar() {
                   active
                     ? 'bg-primary-100 text-primary'
                     : 'text-forground hover:bg-accent',
-                  collapsed ? 'w-9' : 'w-full'
-                )}>
+                  collapsed ? 'w-9' : 'w-full',
+                )}
+              >
                 <Icon size={20} />
                 {!collapsed && <span>{label}</span>}
               </NextLink>
@@ -151,28 +160,27 @@ export default function Sidebar() {
       <Sheet>
         <SheetTrigger asChild>
           <Button
-            variant='ghost'
-            size='icon'
-            className='md:hidden fixed top-4 left-4 z-50'>
+            variant="ghost"
+            size="icon"
+            className="md:hidden fixed top-4 left-4 z-50"
+          >
             <Menu size={20} />
           </Button>
         </SheetTrigger>
-        <SheetContent
-          side='left'
-          className='p-0 w-64'>
+        <SheetContent side="left" className="p-0 w-64">
           {/* Logo */}
-          <NextLink href='/'>
+          <NextLink href="/">
             <Image
-              src='/logo-dark.jpg'
-              alt='Logo'
-              placeholder='blur'
-              blurDataURL='/logo-dark.jpg'
-              className='object-contain'
+              src="/logo-dark.jpg"
+              alt="Logo"
+              placeholder="blur"
+              blurDataURL="/logo-dark.jpg"
+              className="object-contain"
               width={190}
               height={52}
             />
           </NextLink>
-          <nav className='flex-1 p-4'>
+          <nav className="flex-1 p-4">
             {navItems.map(({ label, href, icon: Icon }) => {
               const active = pathname === href;
               return (
@@ -183,8 +191,9 @@ export default function Sidebar() {
                     'flex items-center gap-3 px-4 py-2 rounded-md text-md font-normal transition-colors',
                     active
                       ? 'bg-primary-100 text-primary'
-                      : 'text-forground hover:bg-accent'
-                  )}>
+                      : 'text-forground hover:bg-accent',
+                  )}
+                >
                   <Icon size={20} />
                   <span>{label}</span>
                 </NextLink>

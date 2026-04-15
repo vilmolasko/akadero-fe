@@ -58,10 +58,10 @@ export default function ContactUs() {
     }),
 
     onSubmit: async (values, { resetForm }) => {
-      if (!captchaValue) {
-        toast.error('Prašome patvirtinti, kad nesate robotas');
-        return;
-      }
+      // if (!captchaValue) {
+      //   toast.error('Prašome patvirtinti, kad nesate robotas');
+      //   return;
+      // }
       mutate({
         ...values,
         recaptchaToken: captchaValue,
